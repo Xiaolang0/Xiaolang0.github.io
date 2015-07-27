@@ -65,6 +65,130 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-VPS设置时间" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/07/27/VPS设置时间/" class="article-date">
+  <time datetime="2015-07-27T03:58:50.000Z" itemprop="datePublished">2015-07-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/27/VPS设置时间/">VPS设置时间</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Linux默认情况下使用UTC格式作为标准时间格式，如果在Linux下运行程序，且在程序中指定了与系统不一样的时区的时候，可能会造成时间错误。</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">sudo</span> tzconfig</span><br><span class="line">如果命令不存在请使用 dpkg-reconfigure tzdata</span><br></pre></td></tr></table></figure>
+<p>选择亚洲（Asia）=》选择Shanghai或者Chongqing</p>
+<h3 id="写入系统">写入系统</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp <span class="regexp">/usr/</span>share<span class="regexp">/zoneinfo/</span>Asia<span class="regexp">/ShangHai /</span>etc<span class="regexp">/localtime</span></span><br></pre></td></tr></table></figure>
+<h3 id="网上同步时间">网上同步时间</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1.  </span>安装ntpdate工具</span><br><span class="line"><span class="header"># sudo apt-get install ntpdate</span></span><br><span class="line"><span class="bullet">2.  </span>设置系统时间与网络时间同步</span><br><span class="line"><span class="header"># ntpdate cn.pool.ntp.org</span></span><br><span class="line"><span class="bullet">3.  </span>将系统时间写入硬件时间</span><br><span class="line"><span class="header"># hwclock –systohc(vps这步可省略)</span></span><br></pre></td></tr></table></figure>
+<p>cn.pool.ntp.org是位于中国的公共NTP服务器，用来同步你的时间(如果你的时间与服务器的时间截不同的话，可能无法同步时间哟，甚至连sudo reboot这样的指令也无法执行)。 </p>
+<p><a href="http://www.cnblogs.com/php5/archive/2011/02/15/1955432.html" target="_blank" rel="external">http://www.cnblogs.com/php5/archive/2011/02/15/1955432.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://xiaolanger.com/2015/07/27/VPS设置时间/" data-id="cicle5igj00038f9g3uxosuu3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Ubuntu备忘" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/07/27/Ubuntu备忘/" class="article-date">
+  <time datetime="2015-07-27T03:57:58.000Z" itemprop="datePublished">2015-07-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/27/Ubuntu备忘/">Ubuntu备忘</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="log：/var/log">log：/var/log</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">auth<span class="class">.log</span> 登陆认证日志</span><br><span class="line">denyhosts<span class="class">.log</span> denyhosts的日志</span><br><span class="line">Nginx,MySQL的日志在此目录的各自分目录中</span><br><span class="line">vsftpd<span class="class">.log</span> FTP软件vsftpd的日志</span><br><span class="line">php5-fpm PHP运行目录</span><br><span class="line">boot<span class="class">.log</span> 系统启动目录</span><br><span class="line">dmesg 初始化日志</span><br><span class="line">syslog 系统服务和核心组件日志</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://xiaolanger.com/2015/07/27/Ubuntu备忘/" data-id="cicle5igr00058f9gy7huhvuk" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Ubuntu-14-04安装webmin" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/07/27/Ubuntu-14-04安装webmin/" class="article-date">
+  <time datetime="2015-07-27T03:52:22.000Z" itemprop="datePublished">2015-07-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/27/Ubuntu-14-04安装webmin/">Ubuntu 14.04安装webmin</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="添加webmin的官方仓库：">添加webmin的官方仓库：</h3><h4 id="修改_/etc/apt/sources-list，">修改 /etc/apt/sources.list，</h4><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="keyword">vi</span> /etc/apt/sources.<span class="keyword">list</span></span><br></pre></td></tr></table></figure>
+<h4 id="添加以下内容">添加以下内容</h4><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">deb <span class="string">http:</span><span class="comment">//download.webmin.com/download/repository sarge contrib </span></span><br><span class="line">deb <span class="string">http:</span><span class="comment">//webmin.mirror.somersettechsolutions.co.uk/repository sarge contrib</span></span><br></pre></td></tr></table></figure>
+<h4 id="添加GPG密钥：">添加GPG密钥：</h4><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo wget http:<span class="comment">//www.webmin.com/jcameron-key.asc </span></span><br><span class="line">sudo apt-<span class="variable">key</span> <span class="built_in">add</span> jcameron-<span class="variable">key</span>.asc</span><br></pre></td></tr></table></figure>
+<h4 id="更新软件源：">更新软件源：</h4><figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="built_in">get</span> <span class="keyword">update</span></span><br></pre></td></tr></table></figure>
+<h3 id="通过如下命令安装webmin：">通过如下命令安装webmin：</h3><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="keyword">get</span> install webmin</span><br></pre></td></tr></table></figure>
+<h3 id="系统默认开启10000端口，可以通过">系统默认开启10000端口，可以通过</h3><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">https:</span><span class="comment">//你的服务器IP:10000</span></span><br></pre></td></tr></table></figure>
+<p>进行对webmin界面的访问</p>
+<p>然后通过Ubuntu上面的账户 密码 进行登陆</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://xiaolanger.com/2015/07/27/Ubuntu-14-04安装webmin/" data-id="cicle5if000008f9gee18z3mf" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Ubuntu安装Nginx、Mysql、PHP" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/07/27/Ubuntu安装Nginx、Mysql、PHP/" class="article-date">
@@ -100,7 +224,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xiaolanger.com/2015/07/27/Ubuntu安装Nginx、Mysql、PHP/" data-id="cicldgg1l0003729gg4vf0dm0" class="article-share-link">Share</a>
+      <a data-url="http://xiaolanger.com/2015/07/27/Ubuntu安装Nginx、Mysql、PHP/" data-id="cicle5igo00048f9gxbog2lyy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -151,7 +275,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xiaolanger.com/2015/07/27/Ubuntu-安装denyhosts/" data-id="cicldgg010000729gsohilgtt" class="article-share-link">Share</a>
+      <a data-url="http://xiaolanger.com/2015/07/27/Ubuntu-安装denyhosts/" data-id="cicle5igt00068f9g7mo0q11a" class="article-share-link">Share</a>
       
       
     </footer>
@@ -187,7 +311,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xiaolanger.com/2015/07/25/first/" data-id="cicldgg1i0002729g0tgcf62y" class="article-share-link">Share</a>
+      <a data-url="http://xiaolanger.com/2015/07/25/first/" data-id="cicle5igh00028f9g50dz89gy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -232,7 +356,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xiaolanger.com/2015/07/25/hello-world/" data-id="cicldgg1d0001729gnp5dwmas" class="article-share-link">Share</a>
+      <a data-url="http://xiaolanger.com/2015/07/25/hello-world/" data-id="cicle5igc00018f9gebrl9yoh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -257,7 +381,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">7</span></li></ul>
     </div>
   </div>
 
@@ -269,19 +393,23 @@
       <ul>
         
           <li>
+            <a href="/2015/07/27/VPS设置时间/">VPS设置时间</a>
+          </li>
+        
+          <li>
+            <a href="/2015/07/27/Ubuntu备忘/">Ubuntu备忘</a>
+          </li>
+        
+          <li>
+            <a href="/2015/07/27/Ubuntu-14-04安装webmin/">Ubuntu 14.04安装webmin</a>
+          </li>
+        
+          <li>
             <a href="/2015/07/27/Ubuntu安装Nginx、Mysql、PHP/">Ubuntu安装Nginx、Mysql、PHP</a>
           </li>
         
           <li>
             <a href="/2015/07/27/Ubuntu-安装denyhosts/">Ubuntu 安装denyhosts</a>
-          </li>
-        
-          <li>
-            <a href="/2015/07/25/first/">first</a>
-          </li>
-        
-          <li>
-            <a href="/2015/07/25/hello-world/">Hello World</a>
           </li>
         
       </ul>
