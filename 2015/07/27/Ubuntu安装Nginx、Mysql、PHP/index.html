@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Ubuntu安装Nginx、Mysql、PHP | xiaolang_record</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="安装MYSQL5.61sudo apt-get install mysql-server-5.6
+安装新版的nginx加入PPA：123sudo apt-get install python-software-properties software-properties-commonsudo add-apt-repository ppa:nginx/stablesudo apt-get updat">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu安装Nginx、Mysql、PHP">
+<meta property="og:url" content="http://xiaolanger.com/2015/07/27/Ubuntu安装Nginx、Mysql、PHP/index.html">
+<meta property="og:site_name" content="xiaolang_record">
+<meta property="og:description" content="安装MYSQL5.61sudo apt-get install mysql-server-5.6
+安装新版的nginx加入PPA：123sudo apt-get install python-software-properties software-properties-commonsudo add-apt-repository ppa:nginx/stablesudo apt-get updat">
+<meta property="og:updated_time" content="2015-07-27T03:45:20.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ubuntu安装Nginx、Mysql、PHP">
+<meta name="twitter:description" content="安装MYSQL5.61sudo apt-get install mysql-server-5.6
+安装新版的nginx加入PPA：123sudo apt-get install python-software-properties software-properties-commonsudo add-apt-repository ppa:nginx/stablesudo apt-get updat">
+  
+    <link rel="alternative" href="/atom.xml" title="xiaolang_record" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">xiaolang_record</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">小狼记录</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://xiaolanger.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Ubuntu安装Nginx、Mysql、PHP" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/07/27/Ubuntu安装Nginx、Mysql、PHP/" class="article-date">
+  <time datetime="2015-07-27T03:42:30.000Z" itemprop="datePublished">2015-07-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Ubuntu安装Nginx、Mysql、PHP
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="安装MYSQL5-6">安装MYSQL5.6</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get <span class="operator"><span class="keyword">install</span> mysql-<span class="keyword">server</span>-<span class="number">5.6</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="安装新版的nginx">安装新版的nginx</h3><h4 id="加入PPA：">加入PPA：</h4><figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install python-software-properties software-properties-common</span><br><span class="line">sudo<span class="instruction"> add-apt-repository </span>ppa:nginx/stable</span><br><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+<h3 id="安装nginx">安装nginx</h3><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="keyword">get</span> install nginx-extras</span><br></pre></td></tr></table></figure>
+<h3 id="安装PHP以及相关包">安装PHP以及相关包</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="built_in">get</span> install php5-cgi php5-mysql php5-fpm php5-curl php5-gd php5-idn php-pear php5-<span class="keyword">imap</span> php5-mcrypt php5-mhash php5-pspell php5-recode php5-snmp php5-sqlite php5-tidy php5-xmlrpc php5-xsl</span><br></pre></td></tr></table></figure>
+<h4 id="因为使用php-fpm搭配nginx，所以添加一些配置">因为使用php-fpm搭配nginx，所以添加一些配置</h4><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo tee /etc/nginx/<span class="keyword">conf</span>.<span class="keyword">d</span>/php.<span class="keyword">conf</span> &lt;&lt; EOF</span><br><span class="line">upstream php &#123;</span><br><span class="line">    server unix:/<span class="keyword">var</span>/<span class="keyword">run</span>/php5-fpm.sock;</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+<h4 id="然后检查一下_/etc/php5/fpm/pool-d/www-conf,_保证里面有这三句(有注释的话，删除注释符号，确保一模一样):">然后检查一下 /etc/php5/fpm/pool.d/www.conf, 保证里面有这三句(有注释的话，删除注释符号，确保一模一样):</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">listen<span class="class">.owner</span> = www-data</span><br><span class="line">listen<span class="class">.group</span> = www-data</span><br><span class="line">listen<span class="class">.mode</span> = <span class="number">0660</span></span><br></pre></td></tr></table></figure>
+<h3 id="配置nginx">配置nginx</h3><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">路径：/etc/nginx/sites-available/<span class="keyword">default</span></span><br><span class="line"></span><br><span class="line">检查以下几行</span><br><span class="line"></span><br><span class="line"><span class="built_in">index</span> <span class="built_in">index</span>.php <span class="built_in">index</span>.html <span class="built_in">index</span>.htm <span class="built_in">index</span>.nginx-debian.html;</span><br><span class="line"></span><br><span class="line">location ~ \.php$ &#123;</span><br><span class="line">                <span class="keyword">include</span> snippets/fastcgi-php.conf;</span><br><span class="line">                fastcgi_pass unix:/var/run/php5-fpm.sock;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="重启nginx和php5-fpm">重启nginx和php5-fpm</h4><figure class="highlight puppet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="keyword">service</span> nginx <span class="literal">restart</span></span><br><span class="line">sudo <span class="keyword">service</span> php5-fpm <span class="literal">restart</span></span><br></pre></td></tr></table></figure>
+<h3 id="使用_phpinfo()_和数据库操作来测试">使用 phpinfo() 和数据库操作来测试</h3><p><a href="http://ttt.tt/158/" target="_blank" rel="external">http://ttt.tt/158/</a><br><a href="http://www.cnblogs.com/eecs/p/3963869.html" target="_blank" rel="external">http://www.cnblogs.com/eecs/p/3963869.html</a><br><a href="http://www.tocker.ca/2014/04/21/installing-mysql-5-6-on-ubuntu-14-04-trusty-tahr.html" target="_blank" rel="external">http://www.tocker.ca/2014/04/21/installing-mysql-5-6-on-ubuntu-14-04-trusty-tahr.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://xiaolanger.com/2015/07/27/Ubuntu安装Nginx、Mysql、PHP/" data-id="cicldgg1l0003729gg4vf0dm0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/07/27/Ubuntu-安装denyhosts/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Ubuntu 安装denyhosts</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/07/27/Ubuntu安装Nginx、Mysql、PHP/">Ubuntu安装Nginx、Mysql、PHP</a>
+          </li>
+        
+          <li>
+            <a href="/2015/07/27/Ubuntu-安装denyhosts/">Ubuntu 安装denyhosts</a>
+          </li>
+        
+          <li>
+            <a href="/2015/07/25/first/">first</a>
+          </li>
+        
+          <li>
+            <a href="/2015/07/25/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
