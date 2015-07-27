@@ -3,18 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Ubuntu备忘 | xiaolang_record</title>
+  <title>MySQL开启远程登陆 | xiaolang_record</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="log：/var/log12345678auth.log 登陆认证日志denyhosts.log denyhosts的日志Nginx,MySQL的日志在此目录的各自分目录中vsftpd.log FTP软件vsftpd的日志php5-fpm PHP运行目录boot.log 系统启动目录dmesg 初始化日志syslog 系统服务和核心组件日志">
+  <meta name="description" content="登陆mysql1grant all privileges on *.* to &apos;用户名&apos;@&apos;%&apos; identified by &apos;密码&apos; with grant option;
+注释配置文件中bind_address12配置文件路径：/etc/mysql/my.cnf注释掉    #bind-address           = 127.0.0.1
+http://www.111cn.net/data">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu备忘">
-<meta property="og:url" content="http://xiaolanger.com/2015/07/27/Ubuntu备忘/index.html">
+<meta property="og:title" content="MySQL开启远程登陆">
+<meta property="og:url" content="http://xiaolanger.com/2015/07/27/MySQL开启远程登陆/index.html">
 <meta property="og:site_name" content="xiaolang_record">
-<meta property="og:description" content="log：/var/log12345678auth.log 登陆认证日志denyhosts.log denyhosts的日志Nginx,MySQL的日志在此目录的各自分目录中vsftpd.log FTP软件vsftpd的日志php5-fpm PHP运行目录boot.log 系统启动目录dmesg 初始化日志syslog 系统服务和核心组件日志">
-<meta property="og:updated_time" content="2015-07-27T03:58:26.000Z">
+<meta property="og:description" content="登陆mysql1grant all privileges on *.* to &apos;用户名&apos;@&apos;%&apos; identified by &apos;密码&apos; with grant option;
+注释配置文件中bind_address12配置文件路径：/etc/mysql/my.cnf注释掉    #bind-address           = 127.0.0.1
+http://www.111cn.net/data">
+<meta property="og:updated_time" content="2015-07-27T04:15:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu备忘">
-<meta name="twitter:description" content="log：/var/log12345678auth.log 登陆认证日志denyhosts.log denyhosts的日志Nginx,MySQL的日志在此目录的各自分目录中vsftpd.log FTP软件vsftpd的日志php5-fpm PHP运行目录boot.log 系统启动目录dmesg 初始化日志syslog 系统服务和核心组件日志">
+<meta name="twitter:title" content="MySQL开启远程登陆">
+<meta name="twitter:description" content="登陆mysql1grant all privileges on *.* to &apos;用户名&apos;@&apos;%&apos; identified by &apos;密码&apos; with grant option;
+注释配置文件中bind_address12配置文件路径：/etc/mysql/my.cnf注释掉    #bind-address           = 127.0.0.1
+http://www.111cn.net/data">
   
     <link rel="alternative" href="/atom.xml" title="xiaolang_record" type="application/atom+xml">
   
@@ -64,10 +70,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Ubuntu备忘" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-MySQL开启远程登陆" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/07/27/Ubuntu备忘/" class="article-date">
-  <time datetime="2015-07-27T03:57:58.000Z" itemprop="datePublished">2015-07-27</time>
+    <a href="/2015/07/27/MySQL开启远程登陆/" class="article-date">
+  <time datetime="2015-07-27T04:14:30.000Z" itemprop="datePublished">2015-07-27</time>
 </a>
     
   </div>
@@ -78,7 +84,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Ubuntu备忘
+      MySQL开启远程登陆
     </h1>
   
 
@@ -86,12 +92,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="log：/var/log">log：/var/log</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">auth<span class="class">.log</span> 登陆认证日志</span><br><span class="line">denyhosts<span class="class">.log</span> denyhosts的日志</span><br><span class="line">Nginx,MySQL的日志在此目录的各自分目录中</span><br><span class="line">vsftpd<span class="class">.log</span> FTP软件vsftpd的日志</span><br><span class="line">php5-fpm PHP运行目录</span><br><span class="line">boot<span class="class">.log</span> 系统启动目录</span><br><span class="line">dmesg 初始化日志</span><br><span class="line">syslog 系统服务和核心组件日志</span><br></pre></td></tr></table></figure>
+        <h3 id="登陆mysql">登陆mysql</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">grant</span> <span class="keyword">all</span> <span class="keyword">privileges</span> <span class="keyword">on</span> *.* <span class="keyword">to</span> <span class="string">'用户名'</span>@<span class="string">'%'</span> <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">'密码'</span> <span class="keyword">with</span> <span class="keyword">grant</span> <span class="keyword">option</span>;</span></span><br></pre></td></tr></table></figure>
+<h3 id="注释配置文件中bind_address">注释配置文件中bind_address</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">配置文件路径：/etc/mysql/my<span class="class">.cnf</span></span><br><span class="line">注释掉    <span class="id">#bind-address</span>           = <span class="number">127.0</span>.<span class="number">0.1</span></span><br></pre></td></tr></table></figure>
+<p><a href="http://www.111cn.net/database/mysql/34989.htm" target="_blank" rel="external">http://www.111cn.net/database/mysql/34989.htm</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xiaolanger.com/2015/07/27/Ubuntu备忘/" data-id="ciclejjie00058z9gpqvcevgp" class="article-share-link">Share</a>
+      <a data-url="http://xiaolanger.com/2015/07/27/MySQL开启远程登陆/" data-id="ciclejjgw00008z9gmqdcs7sh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -100,19 +108,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/07/27/VPS设置时间/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          VPS设置时间
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/07/27/Ubuntu-14-04安装webmin/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/07/27/VPS设置时间/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Ubuntu 14.04安装webmin</div>
+      <div class="article-nav-title">VPS设置时间</div>
     </a>
   
 </nav>
