@@ -37,16 +37,19 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.4" />
 
 
-<meta name="description" content="log：/var/log12345678auth.log 登陆认证日志denyhosts.log denyhosts的日志Nginx,MySQL的日志在此目录的各自分目录中vsftpd.log FTP软件vsftpd的日志php5-fpm PHP运行目录boot.log 系统启动目录dmesg 初始化日志syslog 系统服务和核心组件日志">
+<meta name="description" content="添加webmin的官方仓库：修改 /etc/apt/sources.list，1sudo vi /etc/apt/sources.list
+添加以下内容12deb http://download.webmin.com/download/repository sarge contrib deb http://webmin.mirror.somersettechsolutions.co.uk/repo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu备忘">
-<meta property="og:url" content="http://xiaolanger.com/2015/07/27/Ubuntu备忘/index.html">
+<meta property="og:title" content="Ubuntu 14.04安装webmin">
+<meta property="og:url" content="http://xiaolanger.com/2015/07/27/Ubuntu-14-04安装webmin.html">
 <meta property="og:site_name" content="xiaolang_record">
-<meta property="og:description" content="log：/var/log12345678auth.log 登陆认证日志denyhosts.log denyhosts的日志Nginx,MySQL的日志在此目录的各自分目录中vsftpd.log FTP软件vsftpd的日志php5-fpm PHP运行目录boot.log 系统启动目录dmesg 初始化日志syslog 系统服务和核心组件日志">
-<meta property="og:updated_time" content="2015-07-27T03:58:26.000Z">
+<meta property="og:description" content="添加webmin的官方仓库：修改 /etc/apt/sources.list，1sudo vi /etc/apt/sources.list
+添加以下内容12deb http://download.webmin.com/download/repository sarge contrib deb http://webmin.mirror.somersettechsolutions.co.uk/repo">
+<meta property="og:updated_time" content="2015-07-27T03:57:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu备忘">
-<meta name="twitter:description" content="log：/var/log12345678auth.log 登陆认证日志denyhosts.log denyhosts的日志Nginx,MySQL的日志在此目录的各自分目录中vsftpd.log FTP软件vsftpd的日志php5-fpm PHP运行目录boot.log 系统启动目录dmesg 初始化日志syslog 系统服务和核心组件日志">
+<meta name="twitter:title" content="Ubuntu 14.04安装webmin">
+<meta name="twitter:description" content="添加webmin的官方仓库：修改 /etc/apt/sources.list，1sudo vi /etc/apt/sources.list
+添加以下内容12deb http://download.webmin.com/download/repository sarge contrib deb http://webmin.mirror.somersettechsolutions.co.uk/repo">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -56,7 +59,7 @@
   };
 </script>
 
-    <title> Ubuntu备忘 // xiaolang_record </title>
+    <title> Ubuntu 14.04安装webmin // xiaolang_record </title>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 <!--[if lte IE 8]>
@@ -151,7 +154,7 @@
           
           
             
-              Ubuntu备忘
+              Ubuntu 14.04安装webmin
             
           
         </h1>
@@ -160,7 +163,7 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-07-27T11:57:58+08:00" content="2015-07-27">
+          <time itemprop="dateCreated" datetime="2015-07-27T11:52:22+08:00" content="2015-07-27">
             2015-07-27
           </time>
         </span>
@@ -179,7 +182,14 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="log：/var/log">log：/var/log</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">auth<span class="class">.log</span> 登陆认证日志</span><br><span class="line">denyhosts<span class="class">.log</span> denyhosts的日志</span><br><span class="line">Nginx,MySQL的日志在此目录的各自分目录中</span><br><span class="line">vsftpd<span class="class">.log</span> FTP软件vsftpd的日志</span><br><span class="line">php5-fpm PHP运行目录</span><br><span class="line">boot<span class="class">.log</span> 系统启动目录</span><br><span class="line">dmesg 初始化日志</span><br><span class="line">syslog 系统服务和核心组件日志</span><br></pre></td></tr></table></figure>
+        <span itemprop="articleBody"><h3 id="添加webmin的官方仓库：">添加webmin的官方仓库：</h3><h4 id="修改_/etc/apt/sources-list，">修改 /etc/apt/sources.list，</h4><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="keyword">vi</span> /etc/apt/sources.<span class="keyword">list</span></span><br></pre></td></tr></table></figure>
+<h4 id="添加以下内容">添加以下内容</h4><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">deb <span class="string">http:</span><span class="comment">//download.webmin.com/download/repository sarge contrib </span></span><br><span class="line">deb <span class="string">http:</span><span class="comment">//webmin.mirror.somersettechsolutions.co.uk/repository sarge contrib</span></span><br></pre></td></tr></table></figure>
+<h4 id="添加GPG密钥：">添加GPG密钥：</h4><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo wget http:<span class="comment">//www.webmin.com/jcameron-key.asc </span></span><br><span class="line">sudo apt-<span class="variable">key</span> <span class="built_in">add</span> jcameron-<span class="variable">key</span>.asc</span><br></pre></td></tr></table></figure>
+<h4 id="更新软件源：">更新软件源：</h4><figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="built_in">get</span> <span class="keyword">update</span></span><br></pre></td></tr></table></figure>
+<h3 id="通过如下命令安装webmin：">通过如下命令安装webmin：</h3><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="keyword">get</span> install webmin</span><br></pre></td></tr></table></figure>
+<h3 id="系统默认开启10000端口，可以通过">系统默认开启10000端口，可以通过</h3><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">https:</span><span class="comment">//你的服务器IP:10000</span></span><br></pre></td></tr></table></figure>
+<p>进行对webmin界面的访问</p>
+<p>然后通过Ubuntu上面的账户 密码 进行登陆</p>
 </span>
       
     </div>
@@ -191,13 +201,13 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/07/27/VPS设置时间/" rel="prev">VPS设置时间</a>
+              <a href="/2015/07/27/Ubuntu备忘.html" rel="prev">Ubuntu备忘</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/07/27/Ubuntu-14-04安装webmin/" rel="next">Ubuntu 14.04安装webmin</a>
+              <a href="/2015/07/27/Ubuntu安装Nginx、Mysql、PHP.html" rel="next">Ubuntu安装Nginx、Mysql、PHP</a>
             
           </div>
         </div>
@@ -274,7 +284,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -302,7 +312,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#log：/var/log"><span class="nav-number">1.</span> <span class="nav-text">log：/var/log</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加webmin的官方仓库："><span class="nav-number">1.</span> <span class="nav-text">添加webmin的官方仓库：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#修改_/etc/apt/sources-list，"><span class="nav-number">1.1.</span> <span class="nav-text">修改 /etc/apt/sources.list，</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加以下内容"><span class="nav-number">1.2.</span> <span class="nav-text">添加以下内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加GPG密钥："><span class="nav-number">1.3.</span> <span class="nav-text">添加GPG密钥：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更新软件源："><span class="nav-number">1.4.</span> <span class="nav-text">更新软件源：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过如下命令安装webmin："><span class="nav-number">2.</span> <span class="nav-text">通过如下命令安装webmin：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统默认开启10000端口，可以通过"><span class="nav-number">3.</span> <span class="nav-text">系统默认开启10000端口，可以通过</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

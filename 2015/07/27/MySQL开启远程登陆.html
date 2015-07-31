@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,next" />
+  <meta name="keywords" content="mysql," />
 
 
 
@@ -37,16 +37,22 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.4" />
 
 
-<meta name="description" content="测试一下">
+<meta name="description" content="登陆mysql1grant all privileges on *.* to &apos;用户名&apos;@&apos;%&apos; identified by &apos;密码&apos; with grant option;
+注释配置文件中bind_address12配置文件路径：/etc/mysql/my.cnf注释掉    #bind-address           = 127.0.0.1
+http://www.111cn.net/data">
 <meta property="og:type" content="article">
-<meta property="og:title" content="first">
-<meta property="og:url" content="http://xiaolanger.com/2015/07/25/first/index.html">
+<meta property="og:title" content="MySQL开启远程登陆">
+<meta property="og:url" content="http://xiaolanger.com/2015/07/27/MySQL开启远程登陆.html">
 <meta property="og:site_name" content="xiaolang_record">
-<meta property="og:description" content="测试一下">
-<meta property="og:updated_time" content="2015-07-25T06:38:18.000Z">
+<meta property="og:description" content="登陆mysql1grant all privileges on *.* to &apos;用户名&apos;@&apos;%&apos; identified by &apos;密码&apos; with grant option;
+注释配置文件中bind_address12配置文件路径：/etc/mysql/my.cnf注释掉    #bind-address           = 127.0.0.1
+http://www.111cn.net/data">
+<meta property="og:updated_time" content="2015-07-31T01:06:58.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="first">
-<meta name="twitter:description" content="测试一下">
+<meta name="twitter:title" content="MySQL开启远程登陆">
+<meta name="twitter:description" content="登陆mysql1grant all privileges on *.* to &apos;用户名&apos;@&apos;%&apos; identified by &apos;密码&apos; with grant option;
+注释配置文件中bind_address12配置文件路径：/etc/mysql/my.cnf注释掉    #bind-address           = 127.0.0.1
+http://www.111cn.net/data">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -56,7 +62,7 @@
   };
 </script>
 
-    <title> first // xiaolang_record </title>
+    <title> MySQL开启远程登陆 // xiaolang_record </title>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 <!--[if lte IE 8]>
@@ -151,7 +157,7 @@
           
           
             
-              first
+              MySQL开启远程登陆
             
           
         </h1>
@@ -160,11 +166,22 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-07-25T14:33:15+08:00" content="2015-07-25">
-            2015-07-25
+          <time itemprop="dateCreated" datetime="2015-07-27T12:14:30+08:00" content="2015-07-27">
+            2015-07-27
           </time>
         </span>
 
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+
+              
+              
+
+            
+          </span>
         
 
         
@@ -179,24 +196,33 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="测试一下">测试一下</h2></span>
+        <span itemprop="articleBody"><h3 id="登陆mysql">登陆mysql</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">grant</span> <span class="keyword">all</span> <span class="keyword">privileges</span> <span class="keyword">on</span> *.* <span class="keyword">to</span> <span class="string">'用户名'</span>@<span class="string">'%'</span> <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">'密码'</span> <span class="keyword">with</span> <span class="keyword">grant</span> <span class="keyword">option</span>;</span></span><br></pre></td></tr></table></figure>
+<h3 id="注释配置文件中bind_address">注释配置文件中bind_address</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">配置文件路径：/etc/mysql/my<span class="class">.cnf</span></span><br><span class="line">注释掉    <span class="id">#bind-address</span>           = <span class="number">127.0</span>.<span class="number">0.1</span></span><br></pre></td></tr></table></figure>
+<p><a href="http://www.111cn.net/database/mysql/34989.htm" target="_blank" rel="external">http://www.111cn.net/database/mysql/34989.htm</a></p>
+</span>
       
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/mysql/" rel="tag">#mysql</a>
+          
+        </div>
       
 
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/07/27/Ubuntu-安装denyhosts/" rel="prev">Ubuntu 安装denyhosts</a>
+              <a href="/2015/07/27/Laravel在VPS修改不立即生效的问题.html" rel="prev">Laravel在VPS修改不立即生效的问题</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/07/25/hello-world/" rel="next">Hello World</a>
+              <a href="/2015/07/27/VPS设置时间.html" rel="next">VPS设置时间</a>
             
           </div>
         </div>
@@ -273,7 +299,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -301,7 +327,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#测试一下"><span class="nav-number">1.</span> <span class="nav-text">测试一下</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#登陆mysql"><span class="nav-number">1.</span> <span class="nav-text">登陆mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注释配置文件中bind_address"><span class="nav-number">2.</span> <span class="nav-text">注释配置文件中bind_address</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
