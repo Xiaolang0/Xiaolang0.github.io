@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,next" />
+  <meta name="keywords" content="web," />
 
 
 
@@ -37,19 +37,22 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.4" />
 
 
-<meta name="description" content="安装MYSQL5.61sudo apt-get install mysql-server-5.6
-安装新版的nginx加入PPA：123sudo apt-get install python-software-properties software-properties-commonsudo add-apt-repository ppa:nginx/stablesudo apt-get updat">
+<meta name="description" content="1、网页打开的时候，输入框自动获取焦点有多种方法1&amp;lt;input name=&quot;xxx&quot; autofocus=&quot;autofocus&quot;/&amp;gt;
+2、JS1document.getElementById(&quot;xxx&quot;).focus();
+3、jQuery(与js相同)123$().ready(function() &amp;#123;	$(&quot;#xxx&quot;).focus();&amp;#125;);">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu安装Nginx、Mysql、PHP">
-<meta property="og:url" content="http://xiaolanger.com/2015/07/27/Ubuntu安装Nginx、Mysql、PHP.html">
+<meta property="og:title" content="网页一打开获取自动获取焦点">
+<meta property="og:url" content="http://xiaolanger.com/2015/08/28/网页一打开获取自动获取焦点.html">
 <meta property="og:site_name" content="xiaolang_record">
-<meta property="og:description" content="安装MYSQL5.61sudo apt-get install mysql-server-5.6
-安装新版的nginx加入PPA：123sudo apt-get install python-software-properties software-properties-commonsudo add-apt-repository ppa:nginx/stablesudo apt-get updat">
-<meta property="og:updated_time" content="2015-07-27T03:45:20.000Z">
+<meta property="og:description" content="1、网页打开的时候，输入框自动获取焦点有多种方法1&amp;lt;input name=&quot;xxx&quot; autofocus=&quot;autofocus&quot;/&amp;gt;
+2、JS1document.getElementById(&quot;xxx&quot;).focus();
+3、jQuery(与js相同)123$().ready(function() &amp;#123;	$(&quot;#xxx&quot;).focus();&amp;#125;);">
+<meta property="og:updated_time" content="2015-08-28T02:24:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu安装Nginx、Mysql、PHP">
-<meta name="twitter:description" content="安装MYSQL5.61sudo apt-get install mysql-server-5.6
-安装新版的nginx加入PPA：123sudo apt-get install python-software-properties software-properties-commonsudo add-apt-repository ppa:nginx/stablesudo apt-get updat">
+<meta name="twitter:title" content="网页一打开获取自动获取焦点">
+<meta name="twitter:description" content="1、网页打开的时候，输入框自动获取焦点有多种方法1&amp;lt;input name=&quot;xxx&quot; autofocus=&quot;autofocus&quot;/&amp;gt;
+2、JS1document.getElementById(&quot;xxx&quot;).focus();
+3、jQuery(与js相同)123$().ready(function() &amp;#123;	$(&quot;#xxx&quot;).focus();&amp;#125;);">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -59,7 +62,7 @@
   };
 </script>
 
-    <title> Ubuntu安装Nginx、Mysql、PHP // xiaolang_record </title>
+    <title> 网页一打开获取自动获取焦点 // xiaolang_record </title>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 <!--[if lte IE 8]>
@@ -154,7 +157,7 @@
           
           
             
-              Ubuntu安装Nginx、Mysql、PHP
+              网页一打开获取自动获取焦点
             
           
         </h1>
@@ -163,11 +166,22 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-07-27T11:42:30+08:00" content="2015-07-27">
-            2015-07-27
+          <time itemprop="dateCreated" datetime="2015-08-28T10:15:59+08:00" content="2015-08-28">
+            2015-08-28
           </time>
         </span>
 
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+
+              
+              
+
+            
+          </span>
         
 
         
@@ -182,33 +196,31 @@
       
 
       
-        <span itemprop="articleBody"><h3 id="安装MYSQL5-6">安装MYSQL5.6</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get <span class="operator"><span class="keyword">install</span> mysql-<span class="keyword">server</span>-<span class="number">5.6</span></span></span><br></pre></td></tr></table></figure>
-<h3 id="安装新版的nginx">安装新版的nginx</h3><h4 id="加入PPA：">加入PPA：</h4><figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install python-software-properties software-properties-common</span><br><span class="line">sudo<span class="instruction"> add-apt-repository </span>ppa:nginx/stable</span><br><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
-<h3 id="安装nginx">安装nginx</h3><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="keyword">get</span> install nginx-extras</span><br></pre></td></tr></table></figure>
-<h3 id="安装PHP以及相关包">安装PHP以及相关包</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="built_in">get</span> install php5-cgi php5-mysql php5-fpm php5-curl php5-gd php5-idn php-pear php5-<span class="keyword">imap</span> php5-mcrypt php5-mhash php5-pspell php5-recode php5-snmp php5-sqlite php5-tidy php5-xmlrpc php5-xsl</span><br></pre></td></tr></table></figure>
-<h4 id="因为使用php-fpm搭配nginx，所以添加一些配置">因为使用php-fpm搭配nginx，所以添加一些配置</h4><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo tee /etc/nginx/<span class="keyword">conf</span>.<span class="keyword">d</span>/php.<span class="keyword">conf</span> &lt;&lt; EOF</span><br><span class="line">upstream php &#123;</span><br><span class="line">    server unix:/<span class="keyword">var</span>/<span class="keyword">run</span>/php5-fpm.sock;</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
-<h4 id="然后检查一下_/etc/php5/fpm/pool-d/www-conf,_保证里面有这三句(有注释的话，删除注释符号，确保一模一样):">然后检查一下 /etc/php5/fpm/pool.d/www.conf, 保证里面有这三句(有注释的话，删除注释符号，确保一模一样):</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">listen<span class="class">.owner</span> = www-data</span><br><span class="line">listen<span class="class">.group</span> = www-data</span><br><span class="line">listen<span class="class">.mode</span> = <span class="number">0660</span></span><br></pre></td></tr></table></figure>
-<h3 id="配置nginx">配置nginx</h3><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">路径：/etc/nginx/sites-available/<span class="keyword">default</span></span><br><span class="line"></span><br><span class="line">检查以下几行</span><br><span class="line"></span><br><span class="line"><span class="built_in">index</span> <span class="built_in">index</span>.php <span class="built_in">index</span>.html <span class="built_in">index</span>.htm <span class="built_in">index</span>.nginx-debian.html;</span><br><span class="line"></span><br><span class="line">location ~ \.php$ &#123;</span><br><span class="line">                <span class="keyword">include</span> snippets/fastcgi-php.conf;</span><br><span class="line">                fastcgi_pass unix:/var/run/php5-fpm.sock;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-<h4 id="重启nginx和php5-fpm">重启nginx和php5-fpm</h4><figure class="highlight puppet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="keyword">service</span> nginx <span class="literal">restart</span></span><br><span class="line">sudo <span class="keyword">service</span> php5-fpm <span class="literal">restart</span></span><br></pre></td></tr></table></figure>
-<h3 id="使用_phpinfo()_和数据库操作来测试">使用 phpinfo() 和数据库操作来测试</h3><p><a href="http://ttt.tt/158/" target="_blank" rel="external">http://ttt.tt/158/</a><br><a href="http://www.cnblogs.com/eecs/p/3963869.html" target="_blank" rel="external">http://www.cnblogs.com/eecs/p/3963869.html</a><br><a href="http://www.tocker.ca/2014/04/21/installing-mysql-5-6-on-ubuntu-14-04-trusty-tahr.html" target="_blank" rel="external">http://www.tocker.ca/2014/04/21/installing-mysql-5-6-on-ubuntu-14-04-trusty-tahr.html</a></p>
+        <span itemprop="articleBody"><h3 id="1、网页打开的时候，输入框自动获取焦点有多种方法">1、网页打开的时候，输入框自动获取焦点有多种方法</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">name</span>=<span class="value">"xxx"</span> <span class="attribute">autofocus</span>=<span class="value">"autofocus"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="2、JS">2、JS</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"xxx"</span>).focus();</span><br></pre></td></tr></table></figure>
+<h3 id="3、jQuery(与js相同)">3、jQuery(与js相同)</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$().ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	$(<span class="string">"#xxx"</span>).focus();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 </span>
       
     </div>
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/web/" rel="tag">#web</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/07/27/Ubuntu-14-04安装webmin.html" rel="prev">Ubuntu 14.04安装webmin</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/07/27/Ubuntu-安装denyhosts.html" rel="next">Ubuntu 安装denyhosts</a>
+              <a href="/2015/08/21/表格单边框的CSS.html" rel="next">表格单边框的CSS</a>
             
           </div>
         </div>
@@ -313,7 +325,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装MYSQL5-6"><span class="nav-number">1.</span> <span class="nav-text">安装MYSQL5.6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装新版的nginx"><span class="nav-number">2.</span> <span class="nav-text">安装新版的nginx</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#加入PPA："><span class="nav-number">2.1.</span> <span class="nav-text">加入PPA：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装nginx"><span class="nav-number">3.</span> <span class="nav-text">安装nginx</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装PHP以及相关包"><span class="nav-number">4.</span> <span class="nav-text">安装PHP以及相关包</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#因为使用php-fpm搭配nginx，所以添加一些配置"><span class="nav-number">4.1.</span> <span class="nav-text">因为使用php-fpm搭配nginx，所以添加一些配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#然后检查一下_/etc/php5/fpm/pool-d/www-conf,_保证里面有这三句(有注释的话，删除注释符号，确保一模一样):"><span class="nav-number">4.2.</span> <span class="nav-text">然后检查一下 /etc/php5/fpm/pool.d/www.conf, 保证里面有这三句(有注释的话，删除注释符号，确保一模一样):</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置nginx"><span class="nav-number">5.</span> <span class="nav-text">配置nginx</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#重启nginx和php5-fpm"><span class="nav-number">5.1.</span> <span class="nav-text">重启nginx和php5-fpm</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用_phpinfo()_和数据库操作来测试"><span class="nav-number">6.</span> <span class="nav-text">使用 phpinfo() 和数据库操作来测试</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、网页打开的时候，输入框自动获取焦点有多种方法"><span class="nav-number">1.</span> <span class="nav-text">1、网页打开的时候，输入框自动获取焦点有多种方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、JS"><span class="nav-number">2.</span> <span class="nav-text">2、JS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、jQuery(与js相同)"><span class="nav-number">3.</span> <span class="nav-text">3、jQuery(与js相同)</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
