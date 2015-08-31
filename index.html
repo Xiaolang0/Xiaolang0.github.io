@@ -152,6 +152,76 @@
           
           
             
+              <a class="post-title-link" href="/2015/08/31/hello-world.html" itemprop="url">
+                Hello World
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-08-31T17:35:58+08:00" content="2015-08-31">
+            2015-08-31
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/08/28/网页一打开获取自动获取焦点.html" itemprop="url">
                 网页一打开获取自动获取焦点
               </a>
@@ -319,7 +389,9 @@
 
       
         
-          <span itemprop="articleBody"><h3 id="MySQL">MySQL</h3><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">max_allowed_packet</span> mysql语句的长度</span><br></pre></td></tr></table></figure></span>
+          <span itemprop="articleBody"><h3 id="MySQL">MySQL</h3><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">max_allowed_packet</span> mysql语句的长度</span><br></pre></td></tr></table></figure>
+<h3 id="Vagrant">Vagrant</h3><p>virtualBox 一定要使用4.*版本</p>
+</span>
         
       
     </div>
@@ -738,82 +810,6 @@
 <h3 id="配置nginx">配置nginx</h3><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">路径：/etc/nginx/sites-available/<span class="keyword">default</span></span><br><span class="line"></span><br><span class="line">检查以下几行</span><br><span class="line"></span><br><span class="line"><span class="built_in">index</span> <span class="built_in">index</span>.php <span class="built_in">index</span>.html <span class="built_in">index</span>.htm <span class="built_in">index</span>.nginx-debian.html;</span><br><span class="line"></span><br><span class="line">location ~ \.php$ &#123;</span><br><span class="line">                <span class="keyword">include</span> snippets/fastcgi-php.conf;</span><br><span class="line">                fastcgi_pass unix:/var/run/php5-fpm.sock;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
 <h4 id="重启nginx和php5-fpm">重启nginx和php5-fpm</h4><figure class="highlight puppet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="keyword">service</span> nginx <span class="literal">restart</span></span><br><span class="line">sudo <span class="keyword">service</span> php5-fpm <span class="literal">restart</span></span><br></pre></td></tr></table></figure>
 <h3 id="使用_phpinfo()_和数据库操作来测试">使用 phpinfo() 和数据库操作来测试</h3><p><a href="http://ttt.tt/158/" target="_blank" rel="external">http://ttt.tt/158/</a><br><a href="http://www.cnblogs.com/eecs/p/3963869.html" target="_blank" rel="external">http://www.cnblogs.com/eecs/p/3963869.html</a><br><a href="http://www.tocker.ca/2014/04/21/installing-mysql-5-6-on-ubuntu-14-04-trusty-tahr.html" target="_blank" rel="external">http://www.tocker.ca/2014/04/21/installing-mysql-5-6-on-ubuntu-14-04-trusty-tahr.html</a></p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/07/27/Ubuntu-安装denyhosts.html" itemprop="url">
-                Ubuntu 安装denyhosts
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-07-27T11:27:09+08:00" content="2015-07-27">
-            2015-07-27
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>安装</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget http:<span class="comment">//sourceforge.net/projects/denyhosts/files/denyhosts/2.6/DenyHosts-2.6.tar.gz</span></span><br><span class="line">tar zxvf DenyHosts-<span class="number">2.6</span><span class="class">.tar</span><span class="class">.gz</span></span><br><span class="line">cd DenyHosts-<span class="number">2.6</span></span><br><span class="line">python setup<span class="class">.py</span> install</span><br></pre></td></tr></table></figure>
-<p>复制默认配置文件</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/share/denyhosts/</span><br><span class="line">cp denyhosts<span class="class">.cfg-dist</span> denyhosts<span class="class">.cfg</span></span><br><span class="line">cp daemon-control-dist daemon-control</span><br></pre></td></tr></table></figure>
-<p>修改配置文件denyhosts.cfg</p>
-<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">配置文件说明</span><br><span class="line"></span><br><span class="line">SECURE_LOG = /<span class="keyword">var</span>/log/secure</span><br><span class="line"><span class="preprocessor">#ssh 日志文件，它是根据这个文件来判断的。注意不同的操作系统之间的差别。</span></span><br><span class="line">HOSTS_DENY = /etc/hosts.deny</span><br><span class="line"><span class="preprocessor">#控制用户登陆的文件，被禁止的IP会被写进里面</span></span><br><span class="line">PURGE_DENY = <span class="number">5</span>m</span><br><span class="line"><span class="preprocessor">#过多久后清除已经禁止的</span></span><br><span class="line"><span class="preprocessor"># 'm' = minutes</span></span><br><span class="line"><span class="preprocessor"># 'h' = hours</span></span><br><span class="line"><span class="preprocessor"># 'd' = days</span></span><br><span class="line"><span class="preprocessor"># 'w' = weeks</span></span><br><span class="line"><span class="preprocessor"># 'y' = years</span></span><br><span class="line">BLOCK_SERVICE = sshd</span><br><span class="line"><span class="preprocessor">#禁止的服务名，同样也可以是ftp，smtp等等</span></span><br><span class="line">DENY_THRESHOLD_INVALID = <span class="number">1</span></span><br><span class="line"><span class="preprocessor">#允许无效用户失败的次数</span></span><br><span class="line">DENY_THRESHOLD_VALID = <span class="number">10</span></span><br><span class="line"><span class="preprocessor">#允许普通用户登陆失败的次数</span></span><br><span class="line">DENY_THRESHOLD_ROOT = <span class="number">5</span></span><br><span class="line"><span class="preprocessor">#允许root登陆失败的次数</span></span><br><span class="line">HOSTNAME_LOOKUP=NO</span><br><span class="line"><span class="preprocessor">#是否做域名反解</span></span><br><span class="line">ADMIN_EMAIL = </span><br><span class="line"><span class="preprocessor">#管理员邮箱地址,它会给管理员发邮件</span></span><br><span class="line">DAEMON_LOG = /<span class="keyword">var</span>/log/denyhosts</span><br><span class="line"><span class="preprocessor">#自己的日志文件</span></span><br><span class="line">DAEMON_PURGE = <span class="number">1</span>m</span><br><span class="line"><span class="preprocessor">#预设清除</span></span><br></pre></td></tr></table></figure>
-<p>启动</p>
-<figure class="highlight puppet"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./daemon-<span class="literal">control</span> <span class="literal">start</span></span><br></pre></td></tr></table></figure>
-<p>加入系统service</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s <span class="regexp">/usr/</span>share<span class="regexp">/denyhosts/</span>daemon-control <span class="regexp">/etc/i</span>nit.d<span class="regexp">/denyhosts</span></span><br></pre></td></tr></table></figure>
-<p>这样就可以用 service denyhosts start/restart/stop等命令了</p>
-<p>可能出现出现的错误</p>
-<p>一般会提示有些文件夹不存在，这个时候直接mkdir创建文件夹就可以了，如果是文件不存在，查看配置文件制定的log文件是否选择了正确的操作系统选项</p>
-<p><a href="http://free.yes81.net/yes81/view-11072.html" target="_blank" rel="external">http://free.yes81.net/yes81/view-11072.html</a></p>
-<p><a href="http://www.bootf.com/571.html" target="_blank" rel="external">http://www.bootf.com/571.html</a></p>
 </span>
         
       
