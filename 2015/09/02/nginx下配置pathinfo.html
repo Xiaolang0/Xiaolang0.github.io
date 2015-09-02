@@ -37,19 +37,28 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.4" />
 
 
-<meta name="description" content="MySQL1max_allowed_packet mysql语句的长度
-VagrantvirtualBox 一定要使用4.*版本">
+<meta name="description" content="参考文章：
+nginx+php-fpm组合解决PATHINFO最佳配置
+担心文章丢失，所以在此记录一下：
+修改/etc/nginx/fastcgi.conf 如下：
+123456789101112131415161718192021222324252627282930location ~ \.php &amp;#123;        fastcgi_param  PATH_INFO          $">
 <meta property="og:type" content="article">
-<meta property="og:title" content="杂技">
-<meta property="og:url" content="http://xiaolanger.com/2015/08/20/杂技.html">
+<meta property="og:title" content="nginx下配置pathinfo">
+<meta property="og:url" content="http://xiaolanger.com/2015/09/02/nginx下配置pathinfo.html">
 <meta property="og:site_name" content="xiaolang_record">
-<meta property="og:description" content="MySQL1max_allowed_packet mysql语句的长度
-VagrantvirtualBox 一定要使用4.*版本">
-<meta property="og:updated_time" content="2015-08-31T16:39:23.000Z">
+<meta property="og:description" content="参考文章：
+nginx+php-fpm组合解决PATHINFO最佳配置
+担心文章丢失，所以在此记录一下：
+修改/etc/nginx/fastcgi.conf 如下：
+123456789101112131415161718192021222324252627282930location ~ \.php &amp;#123;        fastcgi_param  PATH_INFO          $">
+<meta property="og:updated_time" content="2015-09-02T14:51:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="杂技">
-<meta name="twitter:description" content="MySQL1max_allowed_packet mysql语句的长度
-VagrantvirtualBox 一定要使用4.*版本">
+<meta name="twitter:title" content="nginx下配置pathinfo">
+<meta name="twitter:description" content="参考文章：
+nginx+php-fpm组合解决PATHINFO最佳配置
+担心文章丢失，所以在此记录一下：
+修改/etc/nginx/fastcgi.conf 如下：
+123456789101112131415161718192021222324252627282930location ~ \.php &amp;#123;        fastcgi_param  PATH_INFO          $">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -59,7 +68,7 @@ VagrantvirtualBox 一定要使用4.*版本">
   };
 </script>
 
-    <title> 杂技 // xiaolang_record </title>
+    <title> nginx下配置pathinfo // xiaolang_record </title>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 <!--[if lte IE 8]>
@@ -154,7 +163,7 @@ VagrantvirtualBox 一定要使用4.*版本">
           
           
             
-              杂技
+              nginx下配置pathinfo
             
           
         </h1>
@@ -163,8 +172,8 @@ VagrantvirtualBox 一定要使用4.*版本">
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-08-20T16:59:12+08:00" content="2015-08-20">
-            2015-08-20
+          <time itemprop="dateCreated" datetime="2015-09-02T20:14:28+08:00" content="2015-09-02">
+            2015-09-02
           </time>
         </span>
 
@@ -182,8 +191,16 @@ VagrantvirtualBox 一定要使用4.*版本">
       
 
       
-        <span itemprop="articleBody"><h3 id="MySQL">MySQL</h3><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">max_allowed_packet</span> mysql语句的长度</span><br></pre></td></tr></table></figure>
-<h3 id="Vagrant">Vagrant</h3><p>virtualBox 一定要使用4.*版本</p>
+        <span itemprop="articleBody"><p>参考文章：</p>
+<p><a href="http://sillydong.com/mysa/myserver/nginx_php_pathinfo.html" target="_blank" rel="external">nginx+php-fpm组合解决PATHINFO最佳配置</a></p>
+<p>担心文章丢失，所以在此记录一下：</p>
+<p>修改/etc/nginx/fastcgi.conf 如下：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">location</span> <span class="regexp">~ \.php</span> &#123;</span><br><span class="line">        <span class="title">fastcgi_param</span>  PATH_INFO          <span class="variable">$fastcgi_path_info</span>;</span><br><span class="line">        <span class="comment">#fastcgi_param  PATH_TRANSLATED    $document_root$fastcgi_path_info;</span></span><br><span class="line"></span><br><span class="line">        <span class="title">fastcgi_param</span>  SCRIPT_FILENAME    <span class="variable">$document_root</span><span class="variable">$fastcgi_script_name</span>;</span><br><span class="line">        <span class="title">fastcgi_param</span>  QUERY_STRING       <span class="variable">$query_string</span>;</span><br><span class="line">        <span class="title">fastcgi_param</span>  REQUEST_METHOD     <span class="variable">$request_method</span>;</span><br><span class="line">        <span class="title">fastcgi_param</span>  CONTENT_TYPE       <span class="variable">$content_type</span>;</span><br><span class="line">        <span class="title">fastcgi_param</span>  CONTENT_LENGTH     <span class="variable">$content_length</span>;</span><br><span class="line"></span><br><span class="line">        <span class="title">fastcgi_param</span>  SCRIPT_NAME        <span class="variable">$fastcgi_script_name</span>;</span><br><span class="line">        <span class="title">fastcgi_param</span>  REQUEST_URI        <span class="variable">$request_uri</span>;</span><br><span class="line">        <span class="title">fastcgi_param</span>  DOCUMENT_URI       <span class="variable">$document_uri</span>;</span><br><span class="line">        <span class="title">fastcgi_param</span>  DOCUMENT_ROOT      <span class="variable">$document_root</span>;</span><br><span class="line">        <span class="title">fastcgi_param</span>  SERVER_PROTOCOL    <span class="variable">$server_protocol</span>;</span><br><span class="line">        <span class="title">fastcgi_param</span>  HTTPS              <span class="variable">$https</span> if_not_empty;</span><br><span class="line"></span><br><span class="line">        <span class="title">fastcgi_param</span>  GATEWAY_INTERFACE  CGI/<span class="number">1</span>.<span class="number">1</span>;</span><br><span class="line">        <span class="title">fastcgi_param</span>  SERVER_SOFTWARE    nginx;</span><br><span class="line"></span><br><span class="line">        <span class="title">fastcgi_param</span>  REMOTE_ADDR        <span class="variable">$remote_addr</span>;</span><br><span class="line">        <span class="title">fastcgi_param</span>  REMOTE_PORT        <span class="variable">$remote_port</span>;</span><br><span class="line">        <span class="title">fastcgi_param</span>  SERVER_ADDR        <span class="variable">$server_addr</span>;</span><br><span class="line">        <span class="title">fastcgi_param</span>  SERVER_PORT        <span class="variable">$server_port</span>;</span><br><span class="line">        <span class="title">fastcgi_param</span>  SERVER_NAME        <span class="variable">$server_name</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment"># PHP only, required if PHP was built with --enable-force-cgi-redirect</span></span><br><span class="line">        <span class="title">fastcgi_param</span>  REDIRECT_STATUS    <span class="number">200</span>;</span><br><span class="line">        <span class="title">fastcgi_index</span>  index.php;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">fastcgi_split_path_info</span><span class="regexp"> ^(.+\.php)(/.+)$</span>;</span><br></pre></td></tr></table></figure>
+<p>这一行放在 site-enable/default下即可</p>
+<p>然后在 site-enable/default中的 php 匹配的代码块中，使用include直接引用fastcgi.conf</p>
+<p>php.ini中的pathinfo选项不用开启，默认关闭就可以了</p>
 </span>
       
     </div>
@@ -195,13 +212,11 @@ VagrantvirtualBox 一定要使用4.*版本">
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/08/21/表格单边框的CSS.html" rel="prev">表格单边框的CSS</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/07/27/Laravel在VPS修改不立即生效的问题.html" rel="next">Laravel在VPS修改不立即生效的问题</a>
+              <a href="/2015/08/28/网页一打开获取自动获取焦点.html" rel="next">网页一打开获取自动获取焦点</a>
             
           </div>
         </div>
@@ -306,7 +321,7 @@ VagrantvirtualBox 一定要使用4.*版本">
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL"><span class="nav-number">1.</span> <span class="nav-text">MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vagrant"><span class="nav-number">2.</span> <span class="nav-text">Vagrant</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
