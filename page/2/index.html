@@ -152,6 +152,76 @@
           
           
             
+              <a class="post-title-link" href="/2015/07/27/Ubuntu安装Nginx、Mysql、PHP.html" itemprop="url">
+                Ubuntu安装Nginx、Mysql、PHP
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-07-27T11:42:30+08:00" content="2015-07-27">
+            2015-07-27
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h3 id="安装MYSQL5-6">安装MYSQL5.6</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get <span class="operator"><span class="keyword">install</span> mysql-<span class="keyword">server</span>-<span class="number">5.6</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="安装新版的nginx">安装新版的nginx</h3><h4 id="加入PPA：">加入PPA：</h4><figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install python-software-properties software-properties-common</span><br><span class="line">sudo<span class="instruction"> add-apt-repository </span>ppa:nginx/stable</span><br><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+<h3 id="安装nginx">安装nginx</h3><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="keyword">get</span> install nginx-extras</span><br></pre></td></tr></table></figure>
+<h3 id="安装PHP以及相关包">安装PHP以及相关包</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="built_in">get</span> install php5-cgi php5-mysql php5-fpm php5-curl php5-gd php5-idn php-pear php5-<span class="keyword">imap</span> php5-mcrypt php5-mhash php5-pspell php5-recode php5-snmp php5-sqlite php5-tidy php5-xmlrpc php5-xsl</span><br></pre></td></tr></table></figure>
+<h4 id="因为使用php-fpm搭配nginx，所以添加一些配置">因为使用php-fpm搭配nginx，所以添加一些配置</h4><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo tee /etc/nginx/<span class="keyword">conf</span>.<span class="keyword">d</span>/php.<span class="keyword">conf</span> &lt;&lt; EOF</span><br><span class="line">upstream php &#123;</span><br><span class="line">    server unix:/<span class="keyword">var</span>/<span class="keyword">run</span>/php5-fpm.sock;</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+<h4 id="然后检查一下_/etc/php5/fpm/pool-d/www-conf,_保证里面有这三句(有注释的话，删除注释符号，确保一模一样):">然后检查一下 /etc/php5/fpm/pool.d/www.conf, 保证里面有这三句(有注释的话，删除注释符号，确保一模一样):</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">listen<span class="class">.owner</span> = www-data</span><br><span class="line">listen<span class="class">.group</span> = www-data</span><br><span class="line">listen<span class="class">.mode</span> = <span class="number">0660</span></span><br></pre></td></tr></table></figure>
+<h3 id="配置nginx">配置nginx</h3><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">路径：/etc/nginx/sites-available/<span class="keyword">default</span></span><br><span class="line"></span><br><span class="line">检查以下几行</span><br><span class="line"></span><br><span class="line"><span class="built_in">index</span> <span class="built_in">index</span>.php <span class="built_in">index</span>.html <span class="built_in">index</span>.htm <span class="built_in">index</span>.nginx-debian.html;</span><br><span class="line"></span><br><span class="line">location ~ \.php$ &#123;</span><br><span class="line">                <span class="keyword">include</span> snippets/fastcgi-php.conf;</span><br><span class="line">                fastcgi_pass unix:/var/run/php5-fpm.sock;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="重启nginx和php5-fpm">重启nginx和php5-fpm</h4><figure class="highlight puppet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="keyword">service</span> nginx <span class="literal">restart</span></span><br><span class="line">sudo <span class="keyword">service</span> php5-fpm <span class="literal">restart</span></span><br></pre></td></tr></table></figure>
+<h3 id="使用_phpinfo()_和数据库操作来测试">使用 phpinfo() 和数据库操作来测试</h3><p><a href="http://ttt.tt/158/" target="_blank" rel="external">http://ttt.tt/158/</a><br><a href="http://www.cnblogs.com/eecs/p/3963869.html" target="_blank" rel="external">http://www.cnblogs.com/eecs/p/3963869.html</a><br><a href="http://www.tocker.ca/2014/04/21/installing-mysql-5-6-on-ubuntu-14-04-trusty-tahr.html" target="_blank" rel="external">http://www.tocker.ca/2014/04/21/installing-mysql-5-6-on-ubuntu-14-04-trusty-tahr.html</a></p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/07/27/Ubuntu-安装denyhosts.html" itemprop="url">
                 Ubuntu 安装denyhosts
               </a>
@@ -317,7 +387,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
