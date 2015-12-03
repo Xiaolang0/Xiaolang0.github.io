@@ -152,6 +152,75 @@
           
           
             
+              <a class="post-title-link" href="/2015/07/27/Ubuntu-14-04安装webmin.html" itemprop="url">
+                Ubuntu 14.04安装webmin
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-07-27T11:52:22+08:00" content="2015-07-27">
+            2015-07-27
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h3 id="添加webmin的官方仓库：">添加webmin的官方仓库：</h3><h4 id="修改_/etc/apt/sources-list，">修改 /etc/apt/sources.list，</h4><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="keyword">vi</span> /etc/apt/sources.<span class="keyword">list</span></span><br></pre></td></tr></table></figure>
+<h4 id="添加以下内容">添加以下内容</h4><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">deb <span class="string">http:</span><span class="comment">//download.webmin.com/download/repository sarge contrib </span></span><br><span class="line">deb <span class="string">http:</span><span class="comment">//webmin.mirror.somersettechsolutions.co.uk/repository sarge contrib</span></span><br></pre></td></tr></table></figure>
+<h4 id="添加GPG密钥：">添加GPG密钥：</h4><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo wget http:<span class="comment">//www.webmin.com/jcameron-key.asc </span></span><br><span class="line">sudo apt-<span class="variable">key</span> <span class="built_in">add</span> jcameron-<span class="variable">key</span>.asc</span><br></pre></td></tr></table></figure>
+<h4 id="更新软件源：">更新软件源：</h4><figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="built_in">get</span> <span class="keyword">update</span></span><br></pre></td></tr></table></figure>
+<h3 id="通过如下命令安装webmin：">通过如下命令安装webmin：</h3><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="keyword">get</span> install webmin</span><br></pre></td></tr></table></figure>
+<h3 id="系统默认开启10000端口，可以通过">系统默认开启10000端口，可以通过</h3><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">https:</span><span class="comment">//你的服务器IP:10000</span></span><br></pre></td></tr></table></figure>
+<p>进行对webmin界面的访问</p>
+<p>然后通过Ubuntu上面的账户 密码 进行登陆</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/07/27/Ubuntu安装Nginx、Mysql、PHP.html" itemprop="url">
                 Ubuntu安装Nginx、Mysql、PHP
               </a>
@@ -387,7 +456,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
