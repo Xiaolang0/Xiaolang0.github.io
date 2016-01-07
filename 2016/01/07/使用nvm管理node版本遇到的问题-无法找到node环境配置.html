@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="web," />
+  <meta name="keywords" content="Hexo,next" />
 
 
 
@@ -37,22 +37,19 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.4" />
 
 
-<meta name="description" content="1、网页打开的时候，输入框自动获取焦点有多种方法1&amp;lt;input name=&quot;xxx&quot; autofocus=&quot;autofocus&quot;/&amp;gt;
-2、JS1document.getElementById(&quot;xxx&quot;).focus();
-3、jQuery(与js相同)123$().ready(function() &amp;#123;	$(&quot;#xxx&quot;).focus();&amp;#125;);">
+<meta name="description" content="使用nvm管理node版本的时候，会出现很多插件无法找到node环境，在网上搜索了一下，解决方案为，使用n来管理node版本。或者建立软连接到nvm下的node
+1ln -s node本身的路径 想生成的路径和文件名">
 <meta property="og:type" content="article">
-<meta property="og:title" content="网页一打开获取自动获取焦点">
-<meta property="og:url" content="http://xiaolanger.com/2015/08/28/网页一打开获取自动获取焦点.html">
+<meta property="og:title" content="使用nvm管理node版本遇到的问题-无法找到node环境配置">
+<meta property="og:url" content="http://xiaolanger.com/2016/01/07/使用nvm管理node版本遇到的问题-无法找到node环境配置.html">
 <meta property="og:site_name" content="xiaolang_record">
-<meta property="og:description" content="1、网页打开的时候，输入框自动获取焦点有多种方法1&amp;lt;input name=&quot;xxx&quot; autofocus=&quot;autofocus&quot;/&amp;gt;
-2、JS1document.getElementById(&quot;xxx&quot;).focus();
-3、jQuery(与js相同)123$().ready(function() &amp;#123;	$(&quot;#xxx&quot;).focus();&amp;#125;);">
-<meta property="og:updated_time" content="2015-08-28T02:24:27.000Z">
+<meta property="og:description" content="使用nvm管理node版本的时候，会出现很多插件无法找到node环境，在网上搜索了一下，解决方案为，使用n来管理node版本。或者建立软连接到nvm下的node
+1ln -s node本身的路径 想生成的路径和文件名">
+<meta property="og:updated_time" content="2016-01-07T14:02:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="网页一打开获取自动获取焦点">
-<meta name="twitter:description" content="1、网页打开的时候，输入框自动获取焦点有多种方法1&amp;lt;input name=&quot;xxx&quot; autofocus=&quot;autofocus&quot;/&amp;gt;
-2、JS1document.getElementById(&quot;xxx&quot;).focus();
-3、jQuery(与js相同)123$().ready(function() &amp;#123;	$(&quot;#xxx&quot;).focus();&amp;#125;);">
+<meta name="twitter:title" content="使用nvm管理node版本遇到的问题-无法找到node环境配置">
+<meta name="twitter:description" content="使用nvm管理node版本的时候，会出现很多插件无法找到node环境，在网上搜索了一下，解决方案为，使用n来管理node版本。或者建立软连接到nvm下的node
+1ln -s node本身的路径 想生成的路径和文件名">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -62,7 +59,7 @@
   };
 </script>
 
-    <title> 网页一打开获取自动获取焦点 // xiaolang_record </title>
+    <title> 使用nvm管理node版本遇到的问题-无法找到node环境配置 // xiaolang_record </title>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 <!--[if lte IE 8]>
@@ -157,7 +154,7 @@
           
           
             
-              网页一打开获取自动获取焦点
+              使用nvm管理node版本遇到的问题-无法找到node环境配置
             
           
         </h1>
@@ -166,22 +163,11 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-08-28T10:15:59+08:00" content="2015-08-28">
-            2015-08-28
+          <time itemprop="dateCreated" datetime="2016-01-07T22:01:56+08:00" content="2016-01-07">
+            2016-01-07
           </time>
         </span>
 
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-
-              
-              
-
-            
-          </span>
         
 
         
@@ -196,33 +182,24 @@
       
 
       
-        <span itemprop="articleBody"><h3 id="1、网页打开的时候，输入框自动获取焦点有多种方法">1、网页打开的时候，输入框自动获取焦点有多种方法</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">name</span>=<span class="value">"xxx"</span> <span class="attribute">autofocus</span>=<span class="value">"autofocus"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="2、JS">2、JS</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"xxx"</span>).focus();</span><br></pre></td></tr></table></figure>
-<h3 id="3、jQuery(与js相同)">3、jQuery(与js相同)</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$().ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	$(<span class="string">"#xxx"</span>).focus();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+        <span itemprop="articleBody"><p>使用nvm管理node版本的时候，会出现很多插件无法找到node环境，在网上搜索了一下，解决方案为，使用n来管理node版本。<br>或者建立软连接到nvm下的node</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s <span class="keyword">node</span><span class="identifier"></span><span class="title">本身的路径 想生成的路径和文件名</span></span><br></pre></td></tr></table></figure>
 </span>
       
     </div>
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/web/" rel="tag">#web</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/02/nginx下配置pathinfo.html" rel="prev">nginx下配置pathinfo</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/08/21/表格单边框的CSS.html" rel="next">表格单边框的CSS</a>
+              <a href="/2015/12/03/好用的图片处理工具（命令行）-ImageMagic.html" rel="next">好用的图片处理工具（命令行）-ImageMagic</a>
             
           </div>
         </div>
@@ -327,7 +304,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、网页打开的时候，输入框自动获取焦点有多种方法"><span class="nav-number">1.</span> <span class="nav-text">1、网页打开的时候，输入框自动获取焦点有多种方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、JS"><span class="nav-number">2.</span> <span class="nav-text">2、JS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、jQuery(与js相同)"><span class="nav-number">3.</span> <span class="nav-text">3、jQuery(与js相同)</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
