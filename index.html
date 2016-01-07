@@ -215,6 +215,68 @@
           
           
             
+              <a class="post-title-link" href="/2016/01/07/Sublime-Text3在编写CSS文件时，无法自动补全Class和ID.html" itemprop="url">
+                Sublime Text3在编写CSS文件时，无法自动补全Class和ID
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2016-01-07T21:57:50+08:00" content="2016-01-07">
+            2016-01-07
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>如果是安装了CSS3的话，在command+Shift+p中，输入Disable Package，然后输入css，选中css点击回车就可以了</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/12/03/好用的图片处理工具（命令行）-ImageMagic.html" itemprop="url">
                 好用的图片处理工具（命令行）-ImageMagic
               </a>
@@ -753,74 +815,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/07/27/VPS设置时间.html" itemprop="url">
-                VPS设置时间
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-07-27T11:58:50+08:00" content="2015-07-27">
-            2015-07-27
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>Linux默认情况下使用UTC格式作为标准时间格式，如果在Linux下运行程序，且在程序中指定了与系统不一样的时区的时候，可能会造成时间错误。</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">sudo</span> tzconfig</span><br><span class="line">如果命令不存在请使用 dpkg-reconfigure tzdata</span><br></pre></td></tr></table></figure>
-<p>选择亚洲（Asia）=》选择Shanghai或者Chongqing</p>
-<h3 id="写入系统">写入系统</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp <span class="regexp">/usr/</span>share<span class="regexp">/zoneinfo/</span>Asia<span class="regexp">/ShangHai /</span>etc<span class="regexp">/localtime</span></span><br></pre></td></tr></table></figure>
-<h3 id="网上同步时间">网上同步时间</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>  安装ntpdate工具</span><br><span class="line"><span class="preprocessor"># sudo apt-get install ntpdate</span></span><br><span class="line"><span class="number">2.</span>  设置系统时间与网络时间同步</span><br><span class="line"><span class="preprocessor"># ntpdate cn.pool.ntp.org</span></span><br><span class="line"><span class="number">3.</span>  将系统时间写入硬件时间</span><br><span class="line"><span class="preprocessor"># hwclock –systohc(vps这步可省略)</span></span><br></pre></td></tr></table></figure>
-<p>cn.pool.ntp.org是位于中国的公共NTP服务器，用来同步你的时间(如果你的时间与服务器的时间截不同的话，可能无法同步时间哟，甚至连sudo reboot这样的指令也无法执行)。 </p>
-<p><a href="http://www.cnblogs.com/php5/archive/2011/02/15/1955432.html" target="_blank" rel="external">http://www.cnblogs.com/php5/archive/2011/02/15/1955432.html</a></p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -860,7 +854,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -874,7 +868,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
