@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="Laravel,PHP,phpstorm," />
+  <meta name="keywords" content="Hexo,next" />
 
 
 
@@ -37,22 +37,22 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.4" />
 
 
-<meta name="description" content="检查一下文件的修改时间，因为Laravel的缓存是根据修改时间来判断的，如果是缓存的修改时间比代码文件新的话，会自动读取缓存的视图文件。使用phpstorm的话，在FTP选项中
-1【Preserve files timestamps】
-将此选项中的对钩去掉再上传。">
+<meta name="description" content="一，ssh上传文件scp file username@hostIP:文件地址 例:
+$ scp test.sql xiaolang@192.168.1.5:/var/www/xiaolang
+二，ssh下载文件scp username@hostIP:文件所在地址   文件目录 例:$ scp xiaolang@192.168.1.5:/var/www/xiaolang/test.sql /home">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Laravel在VPS修改不立即生效的问题">
-<meta property="og:url" content="http://xiaolanger.com/2015/07/27/Laravel在VPS修改不立即生效的问题.html">
+<meta property="og:title" content=" linux下面用ssh上传，下载文件 ">
+<meta property="og:url" content="http://xiaolanger.com/2016/04/26/linux下面用ssh上传，下载文件.html">
 <meta property="og:site_name" content="xiaolang_record">
-<meta property="og:description" content="检查一下文件的修改时间，因为Laravel的缓存是根据修改时间来判断的，如果是缓存的修改时间比代码文件新的话，会自动读取缓存的视图文件。使用phpstorm的话，在FTP选项中
-1【Preserve files timestamps】
-将此选项中的对钩去掉再上传。">
-<meta property="og:updated_time" content="2015-07-31T01:03:21.000Z">
+<meta property="og:description" content="一，ssh上传文件scp file username@hostIP:文件地址 例:
+$ scp test.sql xiaolang@192.168.1.5:/var/www/xiaolang
+二，ssh下载文件scp username@hostIP:文件所在地址   文件目录 例:$ scp xiaolang@192.168.1.5:/var/www/xiaolang/test.sql /home">
+<meta property="og:updated_time" content="2016-04-26T11:11:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Laravel在VPS修改不立即生效的问题">
-<meta name="twitter:description" content="检查一下文件的修改时间，因为Laravel的缓存是根据修改时间来判断的，如果是缓存的修改时间比代码文件新的话，会自动读取缓存的视图文件。使用phpstorm的话，在FTP选项中
-1【Preserve files timestamps】
-将此选项中的对钩去掉再上传。">
+<meta name="twitter:title" content=" linux下面用ssh上传，下载文件 ">
+<meta name="twitter:description" content="一，ssh上传文件scp file username@hostIP:文件地址 例:
+$ scp test.sql xiaolang@192.168.1.5:/var/www/xiaolang
+二，ssh下载文件scp username@hostIP:文件所在地址   文件目录 例:$ scp xiaolang@192.168.1.5:/var/www/xiaolang/test.sql /home">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -62,7 +62,7 @@
   };
 </script>
 
-    <title> Laravel在VPS修改不立即生效的问题 // xiaolang_record </title>
+    <title>  linux下面用ssh上传，下载文件  // xiaolang_record </title>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 <!--[if lte IE 8]>
@@ -157,7 +157,7 @@
           
           
             
-              Laravel在VPS修改不立即生效的问题
+               linux下面用ssh上传，下载文件 
             
           
         </h1>
@@ -166,22 +166,11 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-07-27T12:21:38+08:00" content="2015-07-27">
-            2015-07-27
+          <time itemprop="dateCreated" datetime="2016-04-26T19:09:21+08:00" content="2016-04-26">
+            2016-04-26
           </time>
         </span>
 
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-
-              
-              
-
-            
-          </span>
         
 
         
@@ -196,37 +185,26 @@
       
 
       
-        <span itemprop="articleBody"><p>检查一下文件的修改时间，因为Laravel的缓存是根据修改时间来判断的，如果是缓存的修改时间比代码文件新的话，会自动读取缓存的视图文件。<br>使用phpstorm的话，在FTP选项中</p>
-<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">【Preserve <span class="keyword">files</span> timestamps】</span><br></pre></td></tr></table></figure>
-<p>将此选项中的对钩去掉再上传。</p>
+        <span itemprop="articleBody"><h2 id="一，ssh上传文件">一，ssh上传文件</h2><p>scp file username@hostIP:文件地址 例:</p>
+<p><code>$ scp test.sql xiaolang@192.168.1.5:/var/www/xiaolang</code></p>
+<h2 id="二，ssh下载文件">二，ssh下载文件</h2><p>scp username@hostIP:文件所在地址   文件目录 例:<br><code>$ scp xiaolang@192.168.1.5:/var/www/xiaolang/test.sql /home/zhangy/database_bak/</code></p>
+<p><a href="http://blog.51yip.com/server/332.html" target="_blank" rel="external">http://blog.51yip.com/server/332.html</a></p>
 </span>
       
     </div>
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Laravel/" rel="tag">#Laravel</a>
-          
-            <a href="/tags/PHP/" rel="tag">#PHP</a>
-          
-            <a href="/tags/phpstorm/" rel="tag">#phpstorm</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/08/20/杂技.html" rel="prev">杂技</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/07/27/MySQL开启远程登陆.html" rel="next">MySQL开启远程登陆</a>
+              <a href="/2016/04/03/问题答案.html" rel="next">问题答案</a>
             
           </div>
         </div>
@@ -331,7 +309,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一，ssh上传文件"><span class="nav-number">1.</span> <span class="nav-text">一，ssh上传文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二，ssh下载文件"><span class="nav-number">2.</span> <span class="nav-text">二，ssh下载文件</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
