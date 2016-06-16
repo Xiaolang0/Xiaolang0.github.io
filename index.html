@@ -152,6 +152,69 @@
           
           
             
+              <a class="post-title-link" href="/2016/06/16/linux下SSH保持连接.html" itemprop="url">
+                linux下SSH保持连接
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2016-06-16T19:41:46+08:00" content="2016-06-16">
+            2016-06-16
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>打开ssh配置文件：# vim /etc/ssh/sshd_config<br>加入如下两个参数保存就可以：<br>    <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">TCPKeepAlive</span> <span class="built_in">yes</span></span><br><span class="line">ClientAliveCountMax <span class="number">360</span> <span class="comment">#多久之后自动断开，单位是分钟</span></span><br></pre></td></tr></table></figure></p>
+<pre><code>`sudo <span class="keyword">service</span> sshd <span class="literal">restart</span>`
+</code></pre></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2016/04/26/linux下面用ssh上传，下载文件.html" itemprop="url">
                  linux下面用ssh上传，下载文件 
               </a>
@@ -1060,69 +1123,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/08/20/杂技.html" itemprop="url">
-                杂技
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-08-20T16:59:12+08:00" content="2015-08-20">
-            2015-08-20
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><h3 id="MySQL">MySQL</h3><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">max_allowed_packet</span> mysql语句的长度</span><br></pre></td></tr></table></figure>
-<h3 id="Vagrant">Vagrant</h3><p>virtualBox 一定要使用4.*版本</p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1162,7 +1162,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-count">19</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
