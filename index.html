@@ -152,6 +152,72 @@
           
           
             
+              <a class="post-title-link" href="/2016/08/29/vagrant出现-Warning-Authentication-failure-Retrying.html" itemprop="url">
+                vagrant出现 Warning: Authentication failure. Retrying...
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2016-08-29T18:43:17+08:00" content="2016-08-29">
+            2016-08-29
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>今天vagrant启动，突然出现了个错误『Warning: Authentication failure. Retrying…』，解决方法如下：</p>
+<ol>
+<li>先执行<code>vagrant halt</code>关机</li>
+<li>删除宿主机的vagrant当前目录下的<code>.vagrant/machines/default/virtualbox/private_key</code>文件</li>
+</ol>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2016/06/16/linux下SSH保持连接.html" itemprop="url">
                 linux下SSH保持连接
               </a>
@@ -1062,67 +1128,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/08/21/表格单边框的CSS.html" itemprop="url">
-                表格单边框的CSS
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-08-21T09:51:57+08:00" content="2015-08-21">
-            2015-08-21
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.table_border</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">border</span>:<span class="value"> solid <span class="number">1px</span> black</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">border-collapse</span>:<span class="value">collapse</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="class">.table_border</span> <span class="tag">tr</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">white-space</span>:<span class="value"><span class="number">0</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="class">.table_border</span> <span class="tag">th</span>,</span><br><span class="line"><span class="class">.table_border</span> <span class="tag">td</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">border</span>:<span class="value"> solid <span class="number">1px</span> black</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1162,7 +1167,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
