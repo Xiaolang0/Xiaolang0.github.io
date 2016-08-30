@@ -185,8 +185,9 @@
         
           <span itemprop="articleBody"><p>今天vagrant启动，突然出现了个错误『Warning: Authentication failure. Retrying…』，解决方法如下：</p>
 <ol>
-<li>先执行<code>vagrant halt</code>关机</li>
-<li>删除宿主机的vagrant当前目录下的<code>.vagrant/machines/default/virtualbox/private_key</code>文件</li>
+<li>先执行<code>vagrant ssh-config</code>，找到<code>private_key</code>路径</li>
+<li>执行<code>vagrant halt</code>关机</li>
+<li>删除目录下的<code>private_key</code>文件,我的是在<code>.vagrant/machines/default/virtualbox/private_key</code></li>
 </ol>
 </span>
         

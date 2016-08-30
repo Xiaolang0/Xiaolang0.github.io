@@ -39,23 +39,26 @@
 
 <meta name="description" content="今天vagrant启动，突然出现了个错误『Warning: Authentication failure. Retrying…』，解决方法如下：
 
-先执行vagrant halt关机
-删除宿主机的vagrant当前目录下的.vagrant/machines/default/virtualbox/private_key文件">
+先执行vagrant ssh-config，找到private_key路径
+执行vagrant halt关机
+删除目录下的private_key文件,我的是在.vagrant/machines/default/virtualbox/private_ke">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vagrant出现 Warning: Authentication failure. Retrying...">
 <meta property="og:url" content="http://xiaolanger.com/2016/08/29/vagrant出现-Warning-Authentication-failure-Retrying.html">
 <meta property="og:site_name" content="xiaolang_record">
 <meta property="og:description" content="今天vagrant启动，突然出现了个错误『Warning: Authentication failure. Retrying…』，解决方法如下：
 
-先执行vagrant halt关机
-删除宿主机的vagrant当前目录下的.vagrant/machines/default/virtualbox/private_key文件">
-<meta property="og:updated_time" content="2016-08-29T10:47:45.000Z">
+先执行vagrant ssh-config，找到private_key路径
+执行vagrant halt关机
+删除目录下的private_key文件,我的是在.vagrant/machines/default/virtualbox/private_ke">
+<meta property="og:updated_time" content="2016-08-30T02:52:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vagrant出现 Warning: Authentication failure. Retrying...">
 <meta name="twitter:description" content="今天vagrant启动，突然出现了个错误『Warning: Authentication failure. Retrying…』，解决方法如下：
 
-先执行vagrant halt关机
-删除宿主机的vagrant当前目录下的.vagrant/machines/default/virtualbox/private_key文件">
+先执行vagrant ssh-config，找到private_key路径
+执行vagrant halt关机
+删除目录下的private_key文件,我的是在.vagrant/machines/default/virtualbox/private_ke">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -190,8 +193,9 @@
       
         <span itemprop="articleBody"><p>今天vagrant启动，突然出现了个错误『Warning: Authentication failure. Retrying…』，解决方法如下：</p>
 <ol>
-<li>先执行<code>vagrant halt</code>关机</li>
-<li>删除宿主机的vagrant当前目录下的<code>.vagrant/machines/default/virtualbox/private_key</code>文件</li>
+<li>先执行<code>vagrant ssh-config</code>，找到<code>private_key</code>路径</li>
+<li>执行<code>vagrant halt</code>关机</li>
+<li>删除目录下的<code>private_key</code>文件,我的是在<code>.vagrant/machines/default/virtualbox/private_key</code></li>
 </ol>
 </span>
       
