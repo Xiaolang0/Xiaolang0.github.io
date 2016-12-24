@@ -152,6 +152,76 @@
           
           
             
+              <a class="post-title-link" href="/2016/12/24/centos6-安装-mariaDB10.html" itemprop="url">
+                centos6 安装 mariaDB10
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2016-12-24T15:59:38+08:00" content="2016-12-24">
+            2016-12-24
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><ol>
+<li>找到对应的rpm包，<a href="http://downloads.mariadb.org" target="_blank" rel="external">http://downloads.mariadb.org</a></li>
+<li>wget 下载 client server dev等包</li>
+<li>使用 <code>rpm -ivh ...</code> 来安装</li>
+<li>给予<code>/var/lib/mysql/ mysql:mysql 755</code> 权限</li>
+<li>使用<code>mysql_install_db --defaults-file=/etc/my.cnf --datadir=/var/lib/mysql/ --user=mysql</code> 来初始化mysql</li>
+<li>使用<code>mysqladmin -u root password &quot;新密码&quot;</code> 来重置密码</li>
+</ol>
+<p>ps: 如果启动失败 尝试将<code>/usr/share/mysql/my-huge.conf</code> 或者其他的配置文件复制到 <code>/etc/my.conf</code></p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2016/12/11/使用pocket来保存微信中的文章.html" itemprop="url">
                 使用pocket来保存微信中的文章
               </a>
@@ -729,86 +799,11 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/08/28/网页一打开获取自动获取焦点.html" itemprop="url">
-                网页一打开获取自动获取焦点
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-08-28T10:15:59+08:00" content="2015-08-28">
-            2015-08-28
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><h3 id="1、网页打开的时候，输入框自动获取焦点有多种方法">1、网页打开的时候，输入框自动获取焦点有多种方法</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">name</span>=<span class="value">"xxx"</span> <span class="attribute">autofocus</span>=<span class="value">"autofocus"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="2、JS">2、JS</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"xxx"</span>).focus();</span><br></pre></td></tr></table></figure>
-<h3 id="3、jQuery(与js相同)">3、jQuery(与js相同)</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$().ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	$(<span class="string">"#xxx"</span>).focus();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">&raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">&raquo;</a>
   </nav>
 
 
@@ -843,7 +838,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-count">21</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

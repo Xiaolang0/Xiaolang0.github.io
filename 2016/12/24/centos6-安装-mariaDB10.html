@@ -37,22 +37,28 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.4" />
 
 
-<meta name="description" content="一，ssh上传文件scp file username@hostIP:文件地址 例:
-$ scp test.sql xiaolang@192.168.1.5:/var/www/xiaolang
-二，ssh下载文件scp username@hostIP:文件所在地址 文件目录 例:$ scp xiaolang@192.168.1.5:/var/www/xiaolang/test.sql /home/x">
+<meta name="description" content="找到对应的rpm包，http://downloads.mariadb.org
+wget 下载 client server dev等包
+使用 rpm -ivh ... 来安装
+给予/var/lib/mysql/ mysql:mysql 755 权限
+使用mysql_install_db --defaults-file=/etc/my.cnf --datadir=/var/lib/mysql/ --u">
 <meta property="og:type" content="article">
-<meta property="og:title" content=" linux下面用ssh上传，下载文件 ">
-<meta property="og:url" content="http://xiaolanger.com/2016/04/26/linux下面用ssh上传，下载文件.html">
+<meta property="og:title" content="centos6 安装 mariaDB10">
+<meta property="og:url" content="http://xiaolanger.com/2016/12/24/centos6-安装-mariaDB10.html">
 <meta property="og:site_name" content="xiaolang_record">
-<meta property="og:description" content="一，ssh上传文件scp file username@hostIP:文件地址 例:
-$ scp test.sql xiaolang@192.168.1.5:/var/www/xiaolang
-二，ssh下载文件scp username@hostIP:文件所在地址 文件目录 例:$ scp xiaolang@192.168.1.5:/var/www/xiaolang/test.sql /home/x">
-<meta property="og:updated_time" content="2016-04-26T11:56:50.000Z">
+<meta property="og:description" content="找到对应的rpm包，http://downloads.mariadb.org
+wget 下载 client server dev等包
+使用 rpm -ivh ... 来安装
+给予/var/lib/mysql/ mysql:mysql 755 权限
+使用mysql_install_db --defaults-file=/etc/my.cnf --datadir=/var/lib/mysql/ --u">
+<meta property="og:updated_time" content="2016-12-24T08:06:32.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content=" linux下面用ssh上传，下载文件 ">
-<meta name="twitter:description" content="一，ssh上传文件scp file username@hostIP:文件地址 例:
-$ scp test.sql xiaolang@192.168.1.5:/var/www/xiaolang
-二，ssh下载文件scp username@hostIP:文件所在地址 文件目录 例:$ scp xiaolang@192.168.1.5:/var/www/xiaolang/test.sql /home/x">
+<meta name="twitter:title" content="centos6 安装 mariaDB10">
+<meta name="twitter:description" content="找到对应的rpm包，http://downloads.mariadb.org
+wget 下载 client server dev等包
+使用 rpm -ivh ... 来安装
+给予/var/lib/mysql/ mysql:mysql 755 权限
+使用mysql_install_db --defaults-file=/etc/my.cnf --datadir=/var/lib/mysql/ --u">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -62,7 +68,7 @@ $ scp test.sql xiaolang@192.168.1.5:/var/www/xiaolang
   };
 </script>
 
-    <title>  linux下面用ssh上传，下载文件  // xiaolang_record </title>
+    <title> centos6 安装 mariaDB10 // xiaolang_record </title>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 <!--[if lte IE 8]>
@@ -157,7 +163,7 @@ $ scp test.sql xiaolang@192.168.1.5:/var/www/xiaolang
           
           
             
-               linux下面用ssh上传，下载文件 
+              centos6 安装 mariaDB10
             
           
         </h1>
@@ -166,8 +172,8 @@ $ scp test.sql xiaolang@192.168.1.5:/var/www/xiaolang
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2016-04-26T19:09:21+08:00" content="2016-04-26">
-            2016-04-26
+          <time itemprop="dateCreated" datetime="2016-12-24T15:59:38+08:00" content="2016-12-24">
+            2016-12-24
           </time>
         </span>
 
@@ -185,10 +191,15 @@ $ scp test.sql xiaolang@192.168.1.5:/var/www/xiaolang
       
 
       
-        <span itemprop="articleBody"><h2 id="一，ssh上传文件">一，ssh上传文件</h2><p>scp file username@hostIP:文件地址 例:</p>
-<p><code>$ scp test.sql xiaolang@192.168.1.5:/var/www/xiaolang</code></p>
-<h2 id="二，ssh下载文件">二，ssh下载文件</h2><p>scp username@hostIP:文件所在地址 文件目录 例:<br><code>$ scp xiaolang@192.168.1.5:/var/www/xiaolang/test.sql /home/xiaolang/database_bak/</code></p>
-<p><a href="http://blog.51yip.com/server/332.html" target="_blank" rel="external">http://blog.51yip.com/server/332.html</a></p>
+        <span itemprop="articleBody"><ol>
+<li>找到对应的rpm包，<a href="http://downloads.mariadb.org" target="_blank" rel="external">http://downloads.mariadb.org</a></li>
+<li>wget 下载 client server dev等包</li>
+<li>使用 <code>rpm -ivh ...</code> 来安装</li>
+<li>给予<code>/var/lib/mysql/ mysql:mysql 755</code> 权限</li>
+<li>使用<code>mysql_install_db --defaults-file=/etc/my.cnf --datadir=/var/lib/mysql/ --user=mysql</code> 来初始化mysql</li>
+<li>使用<code>mysqladmin -u root password &quot;新密码&quot;</code> 来重置密码</li>
+</ol>
+<p>ps: 如果启动失败 尝试将<code>/usr/share/mysql/my-huge.conf</code> 或者其他的配置文件复制到 <code>/etc/my.conf</code></p>
 </span>
       
     </div>
@@ -200,13 +211,11 @@ $ scp test.sql xiaolang@192.168.1.5:/var/www/xiaolang
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/06/16/linux下SSH保持连接.html" rel="prev">linux下SSH保持连接</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/07/使用nvm管理node版本遇到的问题-无法找到node环境配置.html" rel="next">使用nvm管理node版本遇到的问题-无法找到node环境配置</a>
+              <a href="/2016/12/11/使用pocket来保存微信中的文章.html" rel="next">使用pocket来保存微信中的文章</a>
             
           </div>
         </div>
@@ -311,7 +320,7 @@ $ scp test.sql xiaolang@192.168.1.5:/var/www/xiaolang
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一，ssh上传文件"><span class="nav-number">1.</span> <span class="nav-text">一，ssh上传文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二，ssh下载文件"><span class="nav-number">2.</span> <span class="nav-text">二，ssh下载文件</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
