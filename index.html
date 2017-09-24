@@ -152,6 +152,72 @@
           
           
             
+              <a class="post-title-link" href="/2017/09/24/数据库中-不可重复读与可重读的区别.html" itemprop="url">
+                数据库中 不可重复读与可重读的区别
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2017-09-24T23:53:19+08:00" content="2017-09-24">
+            2017-09-24
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h4 id="不可重复读和幻读(可重复读)的区别">不可重复读和幻读(可重复读)的区别</h4><p>很多人容易搞混不可重复读和幻读，确实这两者有些相似。但不可重复读重点在于update和delete，而幻读的重点在于insert。</p>
+<p>如果使用锁机制来实现这两种隔离级别，在可重复读中，该sql第一次读取到数据后，就将这些数据加锁，其它事务无法修改这些数据，就可以实现可重复读了。但这种方法却无法锁住insert的数据，所以当事务A先前读取了数据，或者修改了全部数据，事务B还是可以insert数据提交，这时事务A就会发现莫名其妙多了一条之前没有的数据，这就是幻读，不能通过行锁来避免。需要Serializable隔离级别 ，读用读锁，写用写锁，读锁和写锁互斥，这么做可以有效的避免幻读、不可重复读、脏读等问题，但会极大的降低数据库的并发能力。</p>
+<p>所以说不可重复读和幻读最大的区别，就在于如何通过锁机制来解决他们产生的问题。</p>
+<p>上文说的，是使用悲观锁机制来处理这两种问题，但是MySQL、ORACLE、PostgreSQL等成熟的数据库，出于性能考虑，都是使用了以乐观锁为理论基础的MVCC（多版本并发控制）来避免这两种问题。</p>
+<p><a href="https://tech.meituan.com/innodb-lock.html" target="_blank" rel="external">https://tech.meituan.com/innodb-lock.html</a></p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2016/12/24/centos6-安装-mariaDB10.html" itemprop="url">
                 centos6 安装 mariaDB10
               </a>
@@ -728,77 +794,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/09/02/nginx下配置pathinfo.html" itemprop="url">
-                nginx下配置pathinfo
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-09-02T20:14:28+08:00" content="2015-09-02">
-            2015-09-02
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>参考文章：</p>
-<p><a href="http://sillydong.com/mysa/myserver/nginx_php_pathinfo.html" target="_blank" rel="external">nginx+php-fpm组合解决PATHINFO最佳配置</a></p>
-<p>担心文章丢失，所以在此记录一下：</p>
-<p>修改/etc/nginx/fastcgi.conf 如下：</p>
-<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">location ~ \.php &#123;</span><br><span class="line">        fastcgi_param  PATH_INFO          <span class="variable">$fastcgi</span>_path_info;</span><br><span class="line">        #fastcgi_param  PATH_TRANSLATED    <span class="variable">$document</span>_root<span class="variable">$fastcgi</span>_path_info;</span><br><span class="line"></span><br><span class="line">        fastcgi_param  SCRIPT_FILENAME    <span class="variable">$document</span>_root<span class="variable">$fastcgi</span>_script_name;</span><br><span class="line">        fastcgi_param  QUERY_STRING       <span class="variable">$query</span>_string;</span><br><span class="line">        fastcgi_param  REQUEST_METHOD     <span class="variable">$request</span>_method;</span><br><span class="line">        fastcgi_param  CONTENT_TYPE       <span class="variable">$content</span>_type;</span><br><span class="line">        fastcgi_param  CONTENT_LENGTH     <span class="variable">$content</span>_length;</span><br><span class="line"></span><br><span class="line">        fastcgi_param  SCRIPT_NAME        <span class="variable">$fastcgi</span>_script_name;</span><br><span class="line">        fastcgi_param  REQUEST_URI        <span class="variable">$request</span>_uri;</span><br><span class="line">        fastcgi_param  DOCUMENT_URI       <span class="variable">$document</span>_uri;</span><br><span class="line">        fastcgi_param  DOCUMENT_ROOT      <span class="variable">$document</span>_root;</span><br><span class="line">        fastcgi_param  SERVER_PROTOCOL    <span class="variable">$server</span>_protocol;</span><br><span class="line">        fastcgi_param  HTTPS              <span class="variable">$https</span> if_not_empty;</span><br><span class="line"></span><br><span class="line">        fastcgi_param  GATEWAY_INTERFACE  CGI/<span class="number">1.1</span>;</span><br><span class="line">        fastcgi_param  SERVER_SOFTWARE    nginx;</span><br><span class="line"></span><br><span class="line">        fastcgi_param  REMOTE_ADDR        <span class="variable">$remote</span>_addr;</span><br><span class="line">        fastcgi_param  REMOTE_PORT        <span class="variable">$remote</span>_port;</span><br><span class="line">        fastcgi_param  SERVER_ADDR        <span class="variable">$server</span>_addr;</span><br><span class="line">        fastcgi_param  SERVER_PORT        <span class="variable">$server</span>_port;</span><br><span class="line">        fastcgi_param  SERVER_NAME        <span class="variable">$server</span>_name;</span><br><span class="line"></span><br><span class="line">        # PHP only, required if PHP was built with --enable-force-cgi-redirect</span><br><span class="line">        fastcgi_param  REDIRECT_STATUS    <span class="number">200</span>;</span><br><span class="line">        fastcgi_index  index.php;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">fastcgi_split_path_info</span><span class="regexp"> ^(.+\.php)(/.+)$</span>;</span><br></pre></td></tr></table></figure>
-<p>这一行放在 site-enable/default下即可</p>
-<p>然后在 site-enable/default中的 php 匹配的代码块中，使用include直接引用fastcgi.conf</p>
-<p>php.ini中的pathinfo选项不用开启，默认关闭就可以了</p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -838,7 +833,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-count">22</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -887,7 +882,7 @@
             <div class="copyright" >
   
   &copy; &nbsp; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="icon-heart"></i>
   </span>

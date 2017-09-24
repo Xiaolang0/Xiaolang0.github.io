@@ -37,16 +37,19 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.4" />
 
 
-<meta name="description" content="测试一下">
+<meta name="description" content="不可重复读和幻读(可重复读)的区别很多人容易搞混不可重复读和幻读，确实这两者有些相似。但不可重复读重点在于update和delete，而幻读的重点在于insert。
+如果使用锁机制来实现这两种隔离级别，在可重复读中，该sql第一次读取到数据后，就将这些数据加锁，其它事务无法修改这些数据，就可以实现可重复读了。但这种方法却无法锁住insert的数据，所以当事务A先前读取了数据，或者修改了全部数据，事">
 <meta property="og:type" content="article">
-<meta property="og:title" content="first">
-<meta property="og:url" content="http://xiaolanger.com/2015/07/25/first.html">
+<meta property="og:title" content="数据库中 不可重复读与可重读的区别">
+<meta property="og:url" content="http://xiaolanger.com/2017/09/24/数据库中-不可重复读与可重读的区别.html">
 <meta property="og:site_name" content="xiaolang_record">
-<meta property="og:description" content="测试一下">
-<meta property="og:updated_time" content="2015-07-25T06:38:18.000Z">
+<meta property="og:description" content="不可重复读和幻读(可重复读)的区别很多人容易搞混不可重复读和幻读，确实这两者有些相似。但不可重复读重点在于update和delete，而幻读的重点在于insert。
+如果使用锁机制来实现这两种隔离级别，在可重复读中，该sql第一次读取到数据后，就将这些数据加锁，其它事务无法修改这些数据，就可以实现可重复读了。但这种方法却无法锁住insert的数据，所以当事务A先前读取了数据，或者修改了全部数据，事">
+<meta property="og:updated_time" content="2017-09-24T15:54:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="first">
-<meta name="twitter:description" content="测试一下">
+<meta name="twitter:title" content="数据库中 不可重复读与可重读的区别">
+<meta name="twitter:description" content="不可重复读和幻读(可重复读)的区别很多人容易搞混不可重复读和幻读，确实这两者有些相似。但不可重复读重点在于update和delete，而幻读的重点在于insert。
+如果使用锁机制来实现这两种隔离级别，在可重复读中，该sql第一次读取到数据后，就将这些数据加锁，其它事务无法修改这些数据，就可以实现可重复读了。但这种方法却无法锁住insert的数据，所以当事务A先前读取了数据，或者修改了全部数据，事">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -56,7 +59,7 @@
   };
 </script>
 
-    <title> first // xiaolang_record </title>
+    <title> 数据库中 不可重复读与可重读的区别 // xiaolang_record </title>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 <!--[if lte IE 8]>
@@ -151,7 +154,7 @@
           
           
             
-              first
+              数据库中 不可重复读与可重读的区别
             
           
         </h1>
@@ -160,8 +163,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-07-25T14:33:15+08:00" content="2015-07-25">
-            2015-07-25
+          <time itemprop="dateCreated" datetime="2017-09-24T23:53:19+08:00" content="2017-09-24">
+            2017-09-24
           </time>
         </span>
 
@@ -179,7 +182,12 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="测试一下">测试一下</h2></span>
+        <span itemprop="articleBody"><h4 id="不可重复读和幻读(可重复读)的区别">不可重复读和幻读(可重复读)的区别</h4><p>很多人容易搞混不可重复读和幻读，确实这两者有些相似。但不可重复读重点在于update和delete，而幻读的重点在于insert。</p>
+<p>如果使用锁机制来实现这两种隔离级别，在可重复读中，该sql第一次读取到数据后，就将这些数据加锁，其它事务无法修改这些数据，就可以实现可重复读了。但这种方法却无法锁住insert的数据，所以当事务A先前读取了数据，或者修改了全部数据，事务B还是可以insert数据提交，这时事务A就会发现莫名其妙多了一条之前没有的数据，这就是幻读，不能通过行锁来避免。需要Serializable隔离级别 ，读用读锁，写用写锁，读锁和写锁互斥，这么做可以有效的避免幻读、不可重复读、脏读等问题，但会极大的降低数据库的并发能力。</p>
+<p>所以说不可重复读和幻读最大的区别，就在于如何通过锁机制来解决他们产生的问题。</p>
+<p>上文说的，是使用悲观锁机制来处理这两种问题，但是MySQL、ORACLE、PostgreSQL等成熟的数据库，出于性能考虑，都是使用了以乐观锁为理论基础的MVCC（多版本并发控制）来避免这两种问题。</p>
+<p><a href="https://tech.meituan.com/innodb-lock.html" target="_blank" rel="external">https://tech.meituan.com/innodb-lock.html</a></p>
+</span>
       
     </div>
 
@@ -190,11 +198,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/07/27/Ubuntu-安装denyhosts.html" rel="prev">Ubuntu 安装denyhosts</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/24/centos6-安装-mariaDB10.html" rel="next">centos6 安装 mariaDB10</a>
             
           </div>
         </div>
@@ -299,7 +307,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#测试一下"><span class="nav-number">1.</span> <span class="nav-text">测试一下</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#不可重复读和幻读(可重复读)的区别"><span class="nav-number">1.</span> <span class="nav-text">不可重复读和幻读(可重复读)的区别</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

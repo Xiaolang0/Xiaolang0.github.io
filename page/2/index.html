@@ -152,6 +152,77 @@
           
           
             
+              <a class="post-title-link" href="/2015/09/02/nginx下配置pathinfo.html" itemprop="url">
+                nginx下配置pathinfo
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-09-02T20:14:28+08:00" content="2015-09-02">
+            2015-09-02
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>参考文章：</p>
+<p><a href="http://sillydong.com/mysa/myserver/nginx_php_pathinfo.html" target="_blank" rel="external">nginx+php-fpm组合解决PATHINFO最佳配置</a></p>
+<p>担心文章丢失，所以在此记录一下：</p>
+<p>修改/etc/nginx/fastcgi.conf 如下：</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">location ~ \.php &#123;</span><br><span class="line">        fastcgi_param  PATH_INFO          <span class="variable">$fastcgi</span>_path_info;</span><br><span class="line">        #fastcgi_param  PATH_TRANSLATED    <span class="variable">$document</span>_root<span class="variable">$fastcgi</span>_path_info;</span><br><span class="line"></span><br><span class="line">        fastcgi_param  SCRIPT_FILENAME    <span class="variable">$document</span>_root<span class="variable">$fastcgi</span>_script_name;</span><br><span class="line">        fastcgi_param  QUERY_STRING       <span class="variable">$query</span>_string;</span><br><span class="line">        fastcgi_param  REQUEST_METHOD     <span class="variable">$request</span>_method;</span><br><span class="line">        fastcgi_param  CONTENT_TYPE       <span class="variable">$content</span>_type;</span><br><span class="line">        fastcgi_param  CONTENT_LENGTH     <span class="variable">$content</span>_length;</span><br><span class="line"></span><br><span class="line">        fastcgi_param  SCRIPT_NAME        <span class="variable">$fastcgi</span>_script_name;</span><br><span class="line">        fastcgi_param  REQUEST_URI        <span class="variable">$request</span>_uri;</span><br><span class="line">        fastcgi_param  DOCUMENT_URI       <span class="variable">$document</span>_uri;</span><br><span class="line">        fastcgi_param  DOCUMENT_ROOT      <span class="variable">$document</span>_root;</span><br><span class="line">        fastcgi_param  SERVER_PROTOCOL    <span class="variable">$server</span>_protocol;</span><br><span class="line">        fastcgi_param  HTTPS              <span class="variable">$https</span> if_not_empty;</span><br><span class="line"></span><br><span class="line">        fastcgi_param  GATEWAY_INTERFACE  CGI/<span class="number">1.1</span>;</span><br><span class="line">        fastcgi_param  SERVER_SOFTWARE    nginx;</span><br><span class="line"></span><br><span class="line">        fastcgi_param  REMOTE_ADDR        <span class="variable">$remote</span>_addr;</span><br><span class="line">        fastcgi_param  REMOTE_PORT        <span class="variable">$remote</span>_port;</span><br><span class="line">        fastcgi_param  SERVER_ADDR        <span class="variable">$server</span>_addr;</span><br><span class="line">        fastcgi_param  SERVER_PORT        <span class="variable">$server</span>_port;</span><br><span class="line">        fastcgi_param  SERVER_NAME        <span class="variable">$server</span>_name;</span><br><span class="line"></span><br><span class="line">        # PHP only, required if PHP was built with --enable-force-cgi-redirect</span><br><span class="line">        fastcgi_param  REDIRECT_STATUS    <span class="number">200</span>;</span><br><span class="line">        fastcgi_index  index.php;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">fastcgi_split_path_info</span><span class="regexp"> ^(.+\.php)(/.+)$</span>;</span><br></pre></td></tr></table></figure>
+<p>这一行放在 site-enable/default下即可</p>
+<p>然后在 site-enable/default中的 php 匹配的代码块中，使用include直接引用fastcgi.conf</p>
+<p>php.ini中的pathinfo选项不用开启，默认关闭就可以了</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/08/28/网页一打开获取自动获取焦点.html" itemprop="url">
                 网页一打开获取自动获取焦点
               </a>
@@ -759,82 +830,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/07/27/Ubuntu-安装denyhosts.html" itemprop="url">
-                Ubuntu 安装denyhosts
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-07-27T11:27:09+08:00" content="2015-07-27">
-            2015-07-27
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>安装</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget http:<span class="comment">//sourceforge.net/projects/denyhosts/files/denyhosts/2.6/DenyHosts-2.6.tar.gz</span></span><br><span class="line">tar zxvf DenyHosts-<span class="number">2.6</span><span class="class">.tar</span><span class="class">.gz</span></span><br><span class="line">cd DenyHosts-<span class="number">2.6</span></span><br><span class="line">python setup<span class="class">.py</span> install</span><br></pre></td></tr></table></figure>
-<p>复制默认配置文件</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/share/denyhosts/</span><br><span class="line">cp denyhosts<span class="class">.cfg-dist</span> denyhosts<span class="class">.cfg</span></span><br><span class="line">cp daemon-control-dist daemon-control</span><br></pre></td></tr></table></figure>
-<p>修改配置文件denyhosts.cfg</p>
-<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">配置文件说明</span><br><span class="line"></span><br><span class="line">SECURE_LOG = /<span class="keyword">var</span>/log/secure</span><br><span class="line"><span class="preprocessor">#ssh 日志文件，它是根据这个文件来判断的。注意不同的操作系统之间的差别。</span></span><br><span class="line">HOSTS_DENY = /etc/hosts.deny</span><br><span class="line"><span class="preprocessor">#控制用户登陆的文件，被禁止的IP会被写进里面</span></span><br><span class="line">PURGE_DENY = <span class="number">5</span>m</span><br><span class="line"><span class="preprocessor">#过多久后清除已经禁止的</span></span><br><span class="line"><span class="preprocessor"># 'm' = minutes</span></span><br><span class="line"><span class="preprocessor"># 'h' = hours</span></span><br><span class="line"><span class="preprocessor"># 'd' = days</span></span><br><span class="line"><span class="preprocessor"># 'w' = weeks</span></span><br><span class="line"><span class="preprocessor"># 'y' = years</span></span><br><span class="line">BLOCK_SERVICE = sshd</span><br><span class="line"><span class="preprocessor">#禁止的服务名，同样也可以是ftp，smtp等等</span></span><br><span class="line">DENY_THRESHOLD_INVALID = <span class="number">1</span></span><br><span class="line"><span class="preprocessor">#允许无效用户失败的次数</span></span><br><span class="line">DENY_THRESHOLD_VALID = <span class="number">10</span></span><br><span class="line"><span class="preprocessor">#允许普通用户登陆失败的次数</span></span><br><span class="line">DENY_THRESHOLD_ROOT = <span class="number">5</span></span><br><span class="line"><span class="preprocessor">#允许root登陆失败的次数</span></span><br><span class="line">HOSTNAME_LOOKUP=NO</span><br><span class="line"><span class="preprocessor">#是否做域名反解</span></span><br><span class="line">ADMIN_EMAIL = </span><br><span class="line"><span class="preprocessor">#管理员邮箱地址,它会给管理员发邮件</span></span><br><span class="line">DAEMON_LOG = /<span class="keyword">var</span>/log/denyhosts</span><br><span class="line"><span class="preprocessor">#自己的日志文件</span></span><br><span class="line">DAEMON_PURGE = <span class="number">1</span>m</span><br><span class="line"><span class="preprocessor">#预设清除</span></span><br></pre></td></tr></table></figure>
-<p>启动</p>
-<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./daemon-control <span class="literal">start</span></span><br></pre></td></tr></table></figure>
-<p>加入系统service</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s <span class="regexp">/usr/</span>share<span class="regexp">/denyhosts/</span>daemon-control <span class="regexp">/etc/i</span>nit.d<span class="regexp">/denyhosts</span></span><br></pre></td></tr></table></figure>
-<p>这样就可以用 service denyhosts start/restart/stop等命令了</p>
-<p>可能出现出现的错误</p>
-<p>一般会提示有些文件夹不存在，这个时候直接mkdir创建文件夹就可以了，如果是文件不存在，查看配置文件制定的log文件是否选择了正确的操作系统选项</p>
-<p><a href="http://free.yes81.net/yes81/view-11072.html" target="_blank" rel="external">http://free.yes81.net/yes81/view-11072.html</a></p>
-<p><a href="http://www.bootf.com/571.html" target="_blank" rel="external">http://www.bootf.com/571.html</a></p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -874,7 +869,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-count">22</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -923,7 +918,7 @@
             <div class="copyright" >
   
   &copy; &nbsp; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="icon-heart"></i>
   </span>
